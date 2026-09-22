@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia do Hóspede · Rua Dr. Penaforte Mendes, 160</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232C4436'/%3E%3Cpath d='M18 30 32 18l14 12' stroke='%23F8F5EC' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22 28v16h20V28' stroke='%23F8F5EC' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:title" content="Guia de Boas-vindas · Rua Dr. Penaforte Mendes, 160">
+<meta property="og:description" content="Tudo o que você precisa para sua estadia em São Paulo — check-in, wifi, regras, pontos turísticos e muito mais.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2C4436">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Caveat:wght@500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F1ECDF; --paper: #FBF8F0; --ink: #1E2A22; --ink-soft: #55604F;
+    --forest: #3F5F4C; --forest-dark: #2C4436; --brick: #A84B2A; --gold: #B8892F;
+    --teal: #35707A; --line: #E0D7C2; --radius: 14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Work Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--forest-dark);margin:0 0 .3em;letter-spacing:-0.01em;}
+  .script{font-family:'Caveat',cursive;font-weight:600;}
+  a{color:var(--forest-dark);}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:520px;margin:0 auto;padding:0 20px 60px;}
+  button{font-family:inherit;}
+
+  /* LANGUAGE OVERLAY */
+  #langOverlay{
+    position:fixed;inset:0;z-index:999;background:var(--forest-dark);
+    display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  .lang-card{
+    background:var(--paper);border-radius:18px;padding:32px 26px;max-width:360px;width:100%;text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+  }
+  .lang-card .script{font-size:34px;color:var(--forest-dark);}
+  .lang-card p{font-size:13.5px;color:var(--ink-soft);margin:6px 0 22px;}
+  .lang-opt{
+    display:flex;align-items:center;justify-content:space-between;
+    width:100%;padding:14px 18px;margin-bottom:10px;
+    background:var(--bg);border:1.5px solid var(--line);border-radius:999px;
+    font-size:15.5px;font-weight:600;color:var(--forest-dark);cursor:pointer;
+  }
+  .lang-opt span.flag{font-size:18px;}
+  .lang-switch{
+    position:fixed;top:14px;right:14px;z-index:500;
+    background:rgba(20,28,20,.55);color:#F8F5EC;border:none;border-radius:999px;
+    padding:8px 13px;font-size:12.5px;font-weight:600;cursor:pointer;
+    display:flex;align-items:center;gap:5px;backdrop-filter:blur(3px);
+  }
+
+  /* HERO */
+  .hero{position:relative;min-height:150px;display:flex;align-items:flex-end;background:#20291F;overflow:hidden;}
+  .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(27,39,29,.35) 0%, rgba(27,39,29,.85) 100%);}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;}
+  .hero-illus{position:absolute;inset:0;width:100%;height:100%;}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(28,38,29,.1) 0%, rgba(20,28,20,.5) 55%, rgba(15,20,15,.9) 100%);}
+  .hero-inner{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:12px 20px 10px;width:100%;text-align:center;}
+  .eyebrow{font-size:10px;color:#CBD8C6;margin-bottom:2px;letter-spacing:.02em;}
+  .hero .script{color:#F8F5EC;font-size:22px;line-height:1;}
+  .hero h1{color:#F8F5EC;font-size:13px;line-height:1.15;margin:2px 0 0;}
+  .hero p{display:none;}
+  .hero-sign{margin-top:4px;font-family:'Caveat',cursive;font-weight:600;font-size:13px;color:#F8F5EC;}
+  .hero-sign span{display:block;font-family:'Work Sans',sans-serif;font-style:normal;font-weight:500;font-size:9.5px;letter-spacing:.03em;color:#CBD8C6;margin-top:1px;}
+
+  /* TOC */
+  body{padding-bottom:76px;}
+  .bottom-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:400;
+    background:var(--paper);border-top:1px solid var(--line);
+    padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));
+    display:flex;align-items:center;gap:10px;
+    box-shadow:0 -8px 20px rgba(30,42,34,.14);
+  }
+  .search-box{display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:11px 15px;flex:1;min-width:0;}
+  .search-box svg{flex:0 0 auto;}
+  .search-box input{border:none;background:transparent;flex:1;font-size:14.5px;font-family:'Work Sans',sans-serif;color:var(--ink);outline:none;min-width:0;}
+  .search-box input::placeholder{color:var(--ink-soft);}
+  .back-to-toc{
+    position:fixed;right:14px;bottom:80px;z-index:399;
+    width:42px;height:42px;border-radius:50%;border:none;
+    background:var(--forest-dark);box-shadow:0 4px 12px rgba(30,42,34,.3);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .back-to-toc.show{opacity:1;pointer-events:auto;}
+  .wa-fab{
+    flex:0 0 44px;width:44px;height:44px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    text-decoration:none;box-shadow:0 4px 10px rgba(37,211,102,.4);
+  }
+  .search-results{
+    position:fixed;left:14px;right:14px;bottom:70px;z-index:401;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 -6px 20px rgba(30,42,34,.18);max-height:60vh;overflow-y:auto;
+  }
+  .search-results button{display:block;width:100%;text-align:left;padding:11px 16px;border:none;background:none;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--line);font-family:'Work Sans',sans-serif;}
+  .search-results button:last-child{border-bottom:none;}
+  .search-results .none{padding:11px 16px;font-size:13px;color:var(--ink-soft);}
+  .search-hit{background:rgba(184,137,47,.28);transition:background 1.4s ease;border-radius:3px;}
+
+  .toc{background:var(--paper);margin:12px 0 16px;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 8px;box-shadow:0 10px 30px rgba(30,42,34,0.14);}
+  .toc-title{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--forest);font-weight:600;margin-bottom:8px;}
+  .toc ol{list-style:none;margin:0;padding:0;}
+  .toc li{border-bottom:1px dashed var(--line);}
+  .toc li:last-child{border-bottom:none;}
+  .toc-link{
+    display:flex;align-items:center;gap:10px;width:100%;
+    background:none;border:none;text-align:left;padding:9px 0;
+    font-size:14.5px;color:var(--ink);cursor:pointer;font-family:'Work Sans',sans-serif;
+  }
+  .toc .n{flex:0 0 24px;height:24px;border-radius:50%;background:var(--forest);color:#F8F5EC;font-size:11.5px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .toc-badge{margin-left:auto;flex:0 0 auto;font-size:10.5px;font-weight:700;color:#fff;background:var(--gold);padding:2px 8px;border-radius:999px;}
+  .toc-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:auto;row-gap:16px;column-gap:4px;padding-bottom:4px;}
+  .toc-grid button{background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;font-family:'Work Sans',sans-serif;padding:0;}
+  .toc-grid .icon-tile{position:relative;width:44px;height:44px;border-radius:13px;background:var(--forest);box-shadow:0 3px 8px rgba(44,68,54,.25);display:flex;align-items:center;justify-content:center;}
+  .toc-grid .icon-tile svg{width:21px;height:21px;}
+  .toc-grid .label{font-size:11.5px;font-weight:600;letter-spacing:.01em;color:var(--forest-dark);text-align:center;line-height:1.2;}
+  .tile-badge{position:absolute;top:-7px;right:-7px;font-size:8.5px;font-weight:700;color:#fff;background:var(--gold);padding:1.5px 5px;border-radius:999px;white-space:nowrap;}
+
+  #readProgress{position:fixed;top:0;left:0;height:3px;background:var(--gold);width:0%;z-index:600;transition:width .1s linear;}
+  .weather-chip{
+    display:flex;align-items:center;gap:6px;
+    background:var(--paper);border:1px solid var(--line);border-radius:999px;
+    padding:7px 14px;margin-bottom:8px;text-decoration:none;
+    font-size:11.5px;font-weight:600;color:var(--forest-dark);
+    box-shadow:0 4px 12px rgba(30,42,34,.06);
+  }
+  .weather-chip .wc-icon{font-size:13px;}
+  .weather-chip .wc-arrow{margin-left:auto;color:var(--ink-soft);font-weight:400;}
+  .notice-box{background:rgba(184,137,47,.12);border:1px solid var(--gold);border-radius:12px;padding:12px 16px;margin-bottom:14px;}
+  .notice-label{font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .notice-box p{font-size:13.5px;color:var(--forest-dark);margin:0;}
+
+  /* BOARDING PASS */
+  .pass{background:var(--paper);margin:0 0 8px;border:1px solid var(--line);border-radius:var(--radius);position:relative;box-shadow:0 8px 22px rgba(30,42,34,0.1);}
+  .pass-top{padding:22px 22px 18px;}
+  .pass-label{font-size:11.5px;letter-spacing:.04em;color:var(--forest);text-transform:uppercase;margin-bottom:14px;font-weight:600;}
+  .pass-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;}
+  .pass-item dt{font-size:11.5px;color:var(--ink-soft);margin-bottom:3px;}
+  .pass-item dd{margin:0;font-size:16.5px;font-weight:600;color:var(--forest-dark);}
+  .copy-val{cursor:pointer;display:inline-flex;align-items:center;gap:5px;}
+  .copy-val .copy-ic{color:var(--gold);flex:0 0 auto;}
+  .copy-val.copied{color:var(--gold);}
+  .pass-item.full{grid-column:1 / -1;}
+  .perf{position:relative;height:1px;border-top:2px dashed var(--line);margin:0 22px;}
+  .perf::before,.perf::after{content:'';position:absolute;top:-9px;width:18px;height:18px;background:var(--bg);border-radius:50%;}
+  .perf::before{left:-31px;} .perf::after{right:-31px;}
+  .pass-bottom{padding:18px 22px 22px;}
+  .pass-note{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+
+  .divider{display:flex;align-items:center;gap:14px;margin:44px 0;color:var(--forest);}
+  .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--line);}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:#F8F5EC !important;text-decoration:none;padding:13px 18px;border-radius:999px;font-size:15px;font-weight:600;width:100%;justify-content:center;border:none;cursor:pointer;}
+  .btn.gold{background:var(--gold);} .btn.brick{background:var(--brick);} .btn.teal{background:var(--teal);}
+  .btn.outline{background:transparent;border:1.5px solid var(--forest);color:var(--forest-dark) !important;}
+
+  section{margin-top:8px;scroll-margin-top:16px;}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .chapter-n{flex:0 0 36px;height:36px;border-radius:50%;background:var(--forest-dark);color:#F8F5EC;font-family:'Fraunces',serif;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .sec-head h2{font-size:22px;margin:0;}
+  .sec-sub{font-size:13.5px;color:var(--ink-soft);margin:-6px 0 16px 48px;}
+
+  .steps{list-style:none;margin:0;padding:0;}
+  .steps li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .step-n{flex:0 0 26px;height:26px;border-radius:50%;background:var(--forest);color:#F8F5EC;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .step-t{font-size:15px;} .step-t b{display:block;color:var(--forest-dark);}
+
+  .block{border-left:3px solid var(--line);padding-left:16px;margin-bottom:18px;}
+  .block h3{font-size:16.5px;margin-bottom:6px;} .block p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .block.warn{border-left-color:var(--brick);} .block.warn h3{color:var(--brick);}
+  .checklist{list-style:none;padding:0;margin:10px 0 0;}
+  .checklist li{padding:6px 0;}
+  .checklist label{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);cursor:pointer;}
+  .checklist input[type="checkbox"]{width:18px;height:18px;accent-color:var(--forest);flex:0 0 18px;}
+  .checklist input[type="checkbox"]:checked + span{color:var(--ink-soft);text-decoration:line-through;}
+
+  .amen{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;list-style:none;padding:0;margin:0;}
+  .amen li{font-size:14.5px;padding:10px 0;border-bottom:1px solid var(--line);}
+  .amen li b{display:block;color:var(--forest-dark);font-size:13px;font-weight:600;}
+
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0;border-radius:10px;overflow:hidden;}
+  .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;}
+
+  table.pricing{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;}
+  table.pricing th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);padding:6px 0;border-bottom:1px solid var(--line);}
+  table.pricing td{padding:9px 0;border-bottom:1px solid var(--line);}
+  table.pricing td:last-child{text-align:right;font-weight:600;color:var(--brick);}
+
+  .phones{list-style:none;padding:0;margin:0;}
+  .phones li{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}
+  .phones li span.who{color:var(--ink-soft);font-size:13.5px;}
+  .phones li b{font-family:'Fraunces',serif;font-size:19px;color:var(--forest-dark);}
+  .phones li a{text-decoration:none;}
+
+  .map-frame{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 20px rgba(30,42,34,.10);}
+  .map-frame iframe{width:100%;height:260px;border:0;display:block;}
+
+  .quick-actions{padding:0;margin-bottom:14px;}
+  .qa-title{font-size:12.5px;font-weight:600;color:var(--forest-dark);text-align:center;margin:0 0 9px;}
+  .qa-row{display:flex;gap:8px;}
+  .qa-btn{margin-bottom:0;padding-top:9px;padding-bottom:9px;padding-left:8px;padding-right:8px;flex:1;min-width:0;}
+  .qa-btn:last-of-type{margin-bottom:0;}
+  .qa-btn.confirmed{background:var(--gold) !important;}
+  .qa-label{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;}
+  .qa-label b{font-size:14px;font-weight:700;}
+  .qa-label small{font-size:10px;font-weight:500;opacity:.85;}
+  .qa-hint{font-size:10px;color:var(--ink-soft);text-align:center;margin:5px 0 0;}
+  .review-ask{background:var(--paper);border:1px dashed var(--gold);border-radius:12px;padding:14px 16px;margin-top:14px;text-align:center;}
+  .review-ask p{font-size:14px;color:var(--forest-dark);margin:0 0 10px;}
+
+  .map-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 8px 20px rgba(30,42,34,.10);}
+  .map-card .pin{margin:0 auto 10px;}
+  .map-card .addr-big{font-family:'Fraunces',serif;font-size:16px;color:var(--forest-dark);margin-bottom:4px;}
+  .map-card .addr-sub{font-size:12.5px;color:var(--ink-soft);margin-bottom:16px;}
+
+  .room-illus{width:100%;height:150px;border-radius:10px;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;}
+
+  .eat-list{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:6px 16px;margin-bottom:16px;}
+  .eat-item{padding:11px 0;border-bottom:1px solid var(--line);}
+  .eat-item:last-child{border-bottom:none;}
+  .eat-item .eat-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;}
+  .eat-item .eat-name{font-weight:600;color:var(--forest-dark);font-size:14px;}
+  .eat-item .eat-meta{font-size:11px;color:var(--gold);font-weight:600;}
+  .eat-item .eat-addr{font-size:12px;color:var(--ink-soft);margin-top:1px;}
+  .eat-item .eat-desc{font-size:12.5px;color:var(--ink-soft);margin-top:3px;}
+
+  .day-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 10px;margin:0 -4px;}
+  .day-card{flex:0 0 80%;scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;}
+  .day-illus{width:100%;height:84px;border-radius:10px;background:var(--bg);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .day-tag{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-bottom:4px;}
+  .day-card h3{font-size:16.5px;margin-bottom:6px;}
+  .day-card p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+  .scroll-hint{text-align:center;font-size:12px;color:var(--ink-soft);margin:0;}
+
+  .cat-label{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin:28px 0 12px;display:flex;align-items:center;gap:8px;}
+  .cat-label::after{content:'';flex:1;height:1px;background:var(--line);}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:12px;}
+  .card-row{display:flex;gap:12px;align-items:flex-start;}
+  .card-row > .body{flex:1;min-width:0;}
+  .card .icon{flex:0 0 40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .card.health .icon{background:rgba(168,75,42,.12);} .card.culture .icon{background:rgba(63,95,76,.14);} .card.transit .icon{background:rgba(184,137,47,.14);}
+  .card .body{flex:1;min-width:0;}
+  .card h3{font-size:15.5px;margin:0 0 2px;display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;}
+  .card .dist{font-size:11px;font-weight:500;color:var(--gold);background:rgba(184,137,47,.12);padding:1px 7px;border-radius:999px;}
+  .card .line-badge{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;color:#fff;}
+  .card .line-verde{background:#2E7D4F;} .card .line-amarela{background:#C9A227;}
+  .card .addr{font-size:12.5px;color:var(--forest);font-weight:500;margin:0 0 4px;}
+  .card p{font-size:13.5px;color:var(--ink-soft);margin:0 0 10px;}
+  .card a.route{font-size:12.5px;font-weight:600;color:var(--forest-dark);text-decoration:none;display:inline-flex;align-items:center;gap:5px;border:1.3px solid var(--forest);padding:6px 12px;border-radius:999px;}
+
+  footer{margin-top:56px;padding-top:30px;border-top:1px solid var(--line);text-align:center;}
+  footer p{font-size:14px;color:var(--ink-soft);}
+  footer .hero-sign{color:var(--forest-dark);text-align:center;} footer .hero-sign span{color:var(--ink-soft);}
+  footer .heart{margin:0 auto 12px;display:block;}
+
+  @media (max-width:380px){ .hero h1{font-size:12px;} .hero .script{font-size:19px;} .pass-grid{grid-template-columns:1fr;} .sec-sub{margin-left:0;} }
+
+  @media print{
+    #langOverlay, .lang-switch, .bottom-bar, #searchResults, .qa-btn, .qa-hint, .review-ask, .weather-chip, .back-to-toc, .scroll-hint, #readProgress{display:none !important;}
+    .day-carousel{display:block;overflow:visible;}
+    .day-card{margin-bottom:12px;}
+    .toc-grid{display:flex;flex-wrap:wrap;}
+    .toc-grid button{flex:0 0 33%;margin-bottom:14px;}
+    body{padding-bottom:0;}
+    .hero{min-height:auto;}
+    .card a.route[href]:after{content:" (" attr(href) ")";font-size:9px;color:#666;word-break:break-all;}
+    .card, .pass, .toc{box-shadow:none;border:1px solid #ccc;}
+  }
+</style>
+</head>
+<body>
+<div id="readProgress"></div>
+
+<!-- LANGUAGE PICKER -->
+<div id="langOverlay">
+  <div class="lang-card">
+    <div class="script">Welcome</div>
+    <p style="font-size:15px;color:var(--forest-dark);font-weight:500;margin-bottom:4px;">Bem-vindo(a) à sua próxima hospedagem</p>
+    <p>Português · English · Español · 中文 · Français</p>
+    <button class="lang-opt" onclick="setLang('pt')"><span>Português</span><span class="flag">🇧🇷</span></button>
+    <button class="lang-opt" onclick="setLang('en')"><span>English</span><span class="flag">🇺🇸</span></button>
+    <button class="lang-opt" onclick="setLang('es')"><span>Español</span><span class="flag">🇪🇸</span></button>
+    <button class="lang-opt" onclick="setLang('zh')"><span>中文</span><span class="flag">🇨🇳</span></button>
+    <button class="lang-opt" onclick="setLang('fr')"><span>Français</span><span class="flag">🇫🇷</span></button>
+  </div>
+</div>
+
+<button class="lang-switch" onclick="document.getElementById('langOverlay').style.display='flex'">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+  <span data-i18n="lang_switch">Idioma</span>
+</button>
+
+<div class="hero">
+  <img class="hero-photo" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1482211168356589290/original/5095b625-d590-434a-9faf-9a1beacd8adc.jpeg" alt="Apartamento de Kamila" loading="lazy">
+  <div class="hero-inner">
+    <div class="script" data-i18n="hero_welcome">Bem-vindo(a)</div>
+    <h1 data-i18n="hero_title">à sua próxima hospedagem</h1>
+    <p data-i18n="hero_p">Este é o seu guia de estadia — tudo o que você precisa para chegar, se sentir em casa e aproveitar São Paulo, num só lugar.</p>
+    <div class="hero-sign"><span data-i18n="hero_sign">com carinho, Kamila</span>
+      <span data-i18n="hero_sub">SUPERHOST · 4 ANOS RECEBENDO HÓSPEDES · 5,0 ★</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- AÇÕES RÁPIDAS -->
+  <div class="quick-actions">
+    <p class="qa-title" data-i18n="qa_title">Você acabou de chegar ou já está de saída?</p>
+    <div class="qa-row">
+      <button class="btn qa-btn" onclick="logEvent('checkin')" id="qaCheckin">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><path d="M12 2 3 9v12h6v-7h6v7h6V9z"/></svg>
+        <span class="qa-label"><b data-i18n="qa_checkin_short">Cheguei!</b><small data-i18n="qa_checkin_sub">Avisar check-in</small></span>
+      </button>
+      <button class="btn brick qa-btn" onclick="logEvent('checkout')" id="qaCheckout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        <span class="qa-label"><b data-i18n="qa_checkout_short">Já saí!</b><small data-i18n="qa_checkout_sub">Avisar check-out</small></span>
+      </button>
+    </div>
+    <p class="qa-hint" data-i18n="qa_hint">Um toque avisa a Kamila, inclusive no WhatsApp.</p>
+    <div class="review-ask" style="display:none;">
+      <p data-i18n="review_ask_p">🌟 Se puder, deixe uma nota 5 no Airbnb — nos ajuda muito! Obrigada 💛</p>
+      <a class="btn outline" href="https://www.airbnb.com.br/rooms/1482211168356589290" target="_blank" rel="noopener"><span data-i18n="review_ask_btn">Ver anúncio no Airbnb</span></a>
+    </div>
+    <div class="review-ask promo-box" style="display:none;">
+      <p data-i18n="domferias_p">✈️ Já sabe pra onde vai depois de São Paulo? A Dom Férias monta seu roteiro de viagem prontinho, a partir de R$19,90.</p>
+      <a class="btn outline" href="https://domferias.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener"><span data-i18n="domferias_btn">Conhecer a Dom Férias</span></a>
+    </div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="toc" id="toc">
+    <div class="toc-title" data-i18n="toc_title">Neste guia</div>
+    <div class="toc-grid">
+      <button onclick="goTo('checkin')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><circle cx="7" cy="15" r="4"/><path d="M9.5 12.5 20 2M17 5l3 3M13.5 8.5l2 2"/></svg></span><span class="label" data-i18n="toc_1">Chegada &amp; check-in</span></button>
+      <button onclick="goTo('apartamento')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><path d="M3 10l9-7 9 7"/><path d="M5 9v10h14V9"/></svg></span><span class="label" data-i18n="toc_2">O apartamento</span></button>
+      <button onclick="goTo('predio')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 21v-4h6v4M9 7h.01M15 7h.01M9 11h.01M15 11h.01"/></svg></span><span class="label" data-i18n="toc_3">O condomínio</span></button>
+      <button onclick="goTo('regras')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg></span><span class="label" data-i18n="toc_4">Bom saber</span></button>
+      <button onclick="goTo('checkout')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span><span class="label" data-i18n="toc_5">Saída &amp; checkout</span></button>
+      <button onclick="goTo('regiao')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span class="label" data-i18n="toc_6">Ao redor &amp; mapa</span></button>
+      <button onclick="goTo('comer')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><path d="M3 3v18M3 8h4M3 13h4M14 3v18M18 3a4 4 0 0 1 0 8 4 4 0 0 1 0-8z"/></svg></span><span class="label" data-i18n="toc_7">Comer por perto</span></button>
+      <button onclick="goTo('roteiro')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span class="label" data-i18n="toc_roteiro">Roteiro sugerido</span></button>
+      <button onclick="goTo('metro')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 12h16M8 18l-2 3M16 18l2 3"/><circle cx="8" cy="9" r="1"/><circle cx="16" cy="9" r="1"/></svg></span><span class="label" data-i18n="toc_8">Metrô &amp; mobilidade</span></button>
+      <button onclick="goTo('telefones')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2.1z"/></svg></span><span class="label" data-i18n="toc_9">Telefones úteis</span></button>
+      <button onclick="goTo('hospitais')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5C2 15 12 21 12 21s3.5-2.1 6.1-4.8"/><path d="M12 9v4M10 11h4"/></svg></span><span class="label" data-i18n="cat_hosp">Hospitais próximos</span></button>
+      <button onclick="goTo('faq')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2.5 2-2.5 3.5M12 17h.01"/></svg></span><span class="label" data-i18n="toc_11">FAQ rápido</span></button>
+      <button onclick="goTo('idioma')"><span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><path d="M5 8h11M9 4v2M12 19l5-10 5 10M13.5 15h7"/><path d="M11 8c-1 4-3.5 6.5-7 8"/><path d="M8 11c1.5 1.5 3.5 2.5 6 3"/></svg></span><span class="label" data-i18n="toc_idioma">Frases em português</span></button>
+      <button onclick="goTo('passeios')"><span class="icon-tile"><span class="tile-badge" data-i18n="toc_passeios_badge">5% OFF</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBF8F0" stroke-width="2.3"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg></span><span class="label" data-i18n="toc_passeios_short">Passeios &amp; carro</span></button>
+    </div>
+  </div>
+
+  <button class="btn gold" style="margin-bottom:30px;" onclick="sendWA('msg_extrahour')">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+    <span data-i18n="reg_hour_btn">Pedir hora adicional</span>
+  </button>
+
+  <!-- BOARDING PASS -->
+  <div class="notice-box" id="noticeBox">
+    <div class="notice-label" data-i18n="notice_label">📌 Avisos importantes</div>
+    <p data-i18n="notice_default">Nenhum aviso especial no momento — aproveite a estadia!</p>
+  </div>
+
+  <div class="pass">
+    <div class="pass-top">
+      <div class="pass-label" data-i18n="pass_label">Acesso rápido</div>
+      <dl class="pass-grid">
+        <div class="pass-item full">
+          <dt data-i18n="pass_addr">Endereço</dt>
+          <dd>Rua Dr. Penaforte Mendes, 160 — Apto 602D — Bela Vista, São Paulo</dd>
+        </div>
+        <div class="pass-item"><dt>Wi-Fi</dt><dd class="copy-val" onclick="copyVal(this,'Pandora')">Pandora<svg class="copy-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></dd></div>
+        <div class="pass-item"><dt data-i18n="pass_wifipass">Senha Wi-Fi</dt><dd class="copy-val" onclick="copyVal(this,'satelite12')">satelite12<svg class="copy-ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></dd></div>
+        <div class="pass-item"><dt data-i18n="pass_code">Código da porta do apê</dt><dd>3110</dd></div>
+        <div class="pass-item"><dt data-i18n="pass_hours">Check-in / Check-out</dt><dd>15h / 11h</dd></div>
+      </dl>
+    </div>
+    <div class="perf"></div>
+    <div class="pass-bottom">
+      <p class="pass-note" data-i18n="pass_note">Precisa de algo durante a estadia? Kamila responde rápido.</p>
+      <button class="btn" onclick="sendWA('msg_help')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span data-i18n="pass_btn">Falar com Kamila no WhatsApp</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CHECK-IN -->
+  <section id="checkin">
+    <div class="divider"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></div>
+    <div class="sec-head"><div class="chapter-n">1</div><h2 data-i18n="toc_1">Chegada &amp; check-in</h2></div>
+    <p class="sec-sub" data-i18n="checkin_sub">A partir das 15h.</p>
+    <ol class="steps">
+      <li><span class="step-n">1</span><span class="step-t" data-i18n="checkin_1"><b>Cadastre seu rosto antes de chegar</b>A entrada do condomínio é por reconhecimento facial. Kamila envia um link para você cadastrar sua foto antes da viagem — sem isso, a catraca não libera.</span></li>
+      <li><span class="step-n">2</span><span class="step-t" data-i18n="checkin_2"><b>Chegue ao endereço e entre pela facial</b>Rua Dr. Penaforte Mendes, 160. O rosto cadastrado libera o acesso na portaria, sem precisar de chave ou crachá.</span></li>
+      <li><span class="step-n">3</span><span class="step-t" data-i18n="checkin_3"><b>Suba ao 6º andar — Apartamento 602D</b>O apartamento fica logo na chegada do andar.</span></li>
+      <li><span class="step-n">4</span><span class="step-t" data-i18n="checkin_4"><b>Digite 3110 na porta do apartamento</b>Esse código é só da fechadura do seu apê — a entrada do prédio já foi liberada pela facial.</span></li>
+    </ol>
+    <button class="btn" style="margin-top:16px;" onclick="logEvent('checkin')">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><path d="M12 2 3 9v12h6v-7h6v7h6V9z"/></svg>
+      <span data-i18n="checkin_btn">Cheguei! Avisar Kamila</span>
+    </button>
+  </section>
+
+  <!-- APARTAMENTO -->
+  <section id="apartamento" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">2</div><h2 data-i18n="toc_2">O apartamento</h2></div>
+    <p class="sec-sub" data-i18n="apt_sub">42m², varanda, 6º andar.</p>
+    <div class="gallery">
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1482211168356589290/original/7fcb7cca-ba4b-4be8-8d7d-90597536a35c.png" alt="Quarto" loading="lazy">
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1482211168356589290/original/a4f2d63a-dff9-4533-8fa5-d766f5438416.jpeg" alt="Sala de estar" loading="lazy">
+    </div>
+    <ul class="amen">
+      <li data-i18n="apt_am1">🛏️ Cama de casal 1,38×1,88m</li>
+      <li data-i18n="apt_am2">🛋️ Sofá na sala — vira cama para reservas de 3+ hóspedes</li>
+      <li data-i18n="apt_am3">❄️ Ar-condicionado</li>
+      <li data-i18n="apt_am4">📺 Smart TV</li>
+      <li data-i18n="apt_am5">🍳 Cozinha completa</li>
+      <li data-i18n="apt_am6">🧺 Roupa de cama e banho</li>
+    </ul>
+    <div class="block" style="margin-top:18px;">
+      <h3 data-i18n="apt_light_title">🌤️ Luz natural no sofá-cama</h3>
+      <p data-i18n="apt_light_p">Essa informação é sobre a área externa, onde fica o sofá-cama do 3º e 4º hóspede. Mesmo com a cortina fechada, a cobertura de vidro deixa entrar luz clara ao amanhecer — por isso, disponibilizamos máscara de dormir, caso precise.</p>
+    </div>
+  </section>
+
+  <!-- CONDOMÍNIO -->
+  <section id="predio" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">3</div><h2 data-i18n="toc_3">O condomínio</h2></div>
+    <p class="sec-sub" data-i18n="cond_sub">Infraestrutura completa, sem precisar sair do prédio.</p>
+    <div class="gallery">
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1482211168356589290/original/fad9d792-91e6-4407-b576-7b3feced3c80.jpeg" alt="Área comum do condomínio" loading="lazy">
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1482211168356589290/original/8471b446-aca0-431a-9ef0-204086b15c19.jpeg" alt="Área comum do condomínio" loading="lazy">
+    </div>
+    <ul class="amen">
+      <li data-i18n="cond_am1"><b>6º andar</b>🏊 Piscina</li>
+      <li data-i18n="cond_am2"><b>6º andar</b>🏋️ Academia</li>
+      <li data-i18n="cond_am3"><b>6º andar</b>🧖 Sauna</li>
+      <li data-i18n="cond_am4"><b>Térreo</b>🛒 Mini mercado</li>
+      <li data-i18n="cond_am5"><b>Térreo</b>💻 Coworking</li>
+      <li data-i18n="cond_am6"><b>Térreo</b>🧺 Lavanderia (R$12 lavar + R$12 secar)</li>
+      <li data-i18n="cond_am7"><b>1º andar</b>🗑️ Lixeira (elevador de serviço)</li>
+      <li data-i18n="cond_am8"><b>Portaria</b>👮 24h · facial + interfone</li>
+    </ul>
+    <div class="block" style="margin-top:18px;">
+      <h3 data-i18n="cond_hours_t">🕒 Horário da piscina e academia</h3>
+      <p data-i18n="cond_hours_p">Academia: das 6h à 0h, todos os dias. Piscinas: das 8h às 22h, diariamente — exceto no primeiro dia útil da semana, quando ficam fechadas para limpeza e tratamento da água.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="cond_pool_t">🏊 Regras da piscina</h3>
+      <p data-i18n="cond_pool_p">Não é permitido comer ou beber na área da piscina. Também não é permitido circular de traje de banho fora da área da piscina.</p>
+    </div>
+  </section>
+
+  <!-- REGRAS -->
+  <section id="regras" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">4</div><h2 data-i18n="toc_4">Bom saber</h2></div>
+    <div class="block warn"><h3 data-i18n="reg_silence_t">🤫 Lei do silêncio</h3><p data-i18n="reg_silence_p">Para manter a harmonia com os vizinhos, o condomínio exige silêncio das 22h às 7h. Em caso de descumprimento e multa aplicada pelo condomínio, o valor equivalente será repassado via Airbnb.</p></div>
+    <div class="block warn"><h3 data-i18n="reg_visit_t">🚫 Visitas externas</h3><p data-i18n="reg_visit_p">Não são permitidas, para garantir a segurança e privacidade de todos no condomínio.</p></div>
+    <div class="block warn"><h3 data-i18n="reg_smoke_t">🚬 Fumar</h3><p data-i18n="reg_smoke_p">Permitido somente na área externa (varanda) do apartamento, com a porta de vidro fechada.</p></div>
+    <div class="block"><h3 data-i18n="reg_guest_t">👥 3º e 4º hóspede</h3><p data-i18n="reg_guest_p">Para reservas de até 2 hóspedes, preparamos a cama de casal. Para usar o sofá-cama (3º e 4º hóspede), é necessário reservar para 3 pessoas — isso libera o item automaticamente na reserva.</p></div>
+    <div class="block">
+      <h3 data-i18n="reg_hour_t">⏱️ Hora adicional</h3>
+      <p data-i18n="reg_hour_p">É possível estender a saída por R$50,00, sujeito a disponibilidade. Toque no botão abaixo para verificar com a Kamila.</p>
+      <button class="btn gold" style="margin-top:10px;" onclick="sendWA('msg_extrahour')">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span data-i18n="reg_hour_btn">Pedir hora adicional</span>
+      </button>
+    </div>
+    <div class="block"><h3 data-i18n="reg_clean_t">✨ Sem taxa de limpeza</h3><p data-i18n="reg_clean_p">Confiamos no cuidado dos hóspedes com o espaço. Se o apartamento for devolvido em condições inadequadas, pode ser aplicada uma taxa extra de R$250.</p></div>
+    <div class="block"><h3 data-i18n="reg_kit_t">🧴 Kits extras</h3><p data-i18n="reg_kit_p">Toalhas e roupa de cama adicionais disponíveis por R$50,00 por pessoa, mediante solicitação.</p></div>
+
+    <h3 style="font-size:16.5px;margin:26px 0 4px;" data-i18n="reg_linen_t">🧺 Cuidado com o enxoval</h3>
+    <p style="font-size:13.5px;color:var(--ink-soft);margin:0 0 4px;" data-i18n="reg_linen_p">Pedimos cuidado ao usar maquiagem, protetor solar ou produtos que mancham. Em caso de mancha irreversível ou dano, o valor de reposição é:</p>
+    <table class="pricing">
+      <tr><th data-i18n="reg_table_item">Item</th><th data-i18n="reg_table_price">Reposição</th></tr>
+      <tr><td data-i18n="reg_item1">Lençol</td><td>R$ 80,00</td></tr>
+      <tr><td data-i18n="reg_item2">Toalha de banho</td><td>R$ 50,00</td></tr>
+      <tr><td data-i18n="reg_item3">Toalha de rosto</td><td>R$ 30,00</td></tr>
+    </table>
+  </section>
+
+  <!-- CHECKOUT -->
+  <section id="checkout" style="margin-top:44px;">
+    <div class="divider"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <div class="sec-head"><div class="chapter-n">5</div><h2 data-i18n="toc_5">Saída &amp; checkout</h2></div>
+    <p class="sec-sub" data-i18n="checkout_sub">Até às 11h.</p>
+    <ol class="steps">
+      <li><span class="step-n">1</span><span class="step-t" data-i18n="checkout_1"><b>Tire o lixo</b>Leve até a lixeira do 1º andar, saindo pelo elevador de serviço.</span></li>
+      <li><span class="step-n">2</span><span class="step-t" data-i18n="checkout_2"><b>Nada de papel higiênico no vaso</b>Jogue sempre no lixo — em caso de entupimento, é cobrada uma taxa de R$300,00.</span></li>
+      <li><span class="step-n">3</span><span class="step-t" data-i18n="checkout_3"><b>Desligue tudo</b>Ar-condicionado, luzes, e tranque a porta com a fechadura.</span></li>
+      <li><span class="step-n">4</span><span class="step-t" data-i18n="checkout_4"><b>Pronto!</b>Por gentileza, avise que já saiu tocando no botão abaixo. Qualquer coisa, chame no WhatsApp.</span></li>
+    </ol>
+
+    <div class="block" style="margin-top:18px;">
+      <h3 data-i18n="checklist_t">✅ Checklist antes de sair</h3>
+      <ul class="checklist">
+        <li><label><input type="checkbox"><span data-i18n="cl_1">Cafeteira / fogão desligados</span></label></li>
+        <li><label><input type="checkbox"><span data-i18n="cl_2">Ar-condicionado desligado</span></label></li>
+        <li><label><input type="checkbox"><span data-i18n="cl_3">Luzes apagadas</span></label></li>
+        <li><label><input type="checkbox"><span data-i18n="cl_4">Lixo recolhido</span></label></li>
+        <li><label><input type="checkbox"><span data-i18n="cl_5">Nada esquecido na tomada / carregador</span></label></li>
+        <li><label><input type="checkbox"><span data-i18n="cl_6">Porta trancada na saída</span></label></li>
+      </ul>
+    </div>
+    <button class="btn brick" style="margin-top:16px;" onclick="logEvent('checkout')">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+      <span data-i18n="checkout_btn">Já saí! Avisar Kamila</span>
+    </button>
+    <div class="review-ask">
+      <p data-i18n="review_ask_p">🌟 Se puder, deixe uma nota 5 no Airbnb — nos ajuda muito! Obrigada 💛</p>
+      <a class="btn outline" href="https://www.airbnb.com.br/rooms/1482211168356589290" target="_blank" rel="noopener"><span data-i18n="review_ask_btn">Ver anúncio no Airbnb</span></a>
+    </div>
+    <div class="review-ask promo-box" style="display:none;">
+      <p data-i18n="domferias_p">✈️ Já sabe pra onde vai depois de São Paulo? A Dom Férias monta seu roteiro de viagem prontinho, a partir de R$19,90.</p>
+      <a class="btn outline" href="https://domferias.com.br/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener"><span data-i18n="domferias_btn">Conhecer a Dom Férias</span></a>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="regiao" style="margin-top:44px;">
+    <div class="divider"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+    <div class="sec-head"><div class="chapter-n">6</div><h2 data-i18n="toc_6">Ao redor &amp; mapa</h2></div>
+    <p class="sec-sub" data-i18n="regiao_sub">No coração da Bela Vista, a 1km da Av. Paulista.</p>
+
+    <div class="map-card">
+      <svg class="pin" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.6"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <div class="addr-big">Rua Dr. Penaforte Mendes, 160</div>
+      <div class="addr-sub">Apto 602D — Bela Vista, São Paulo</div>
+      <a class="btn teal" href="https://www.google.com/maps/search/?api=1&query=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <span data-i18n="regiao_open_map">Abrir localização no Maps</span>
+      </a>
+    </div>
+
+    <a class="btn teal" style="margin-top:10px;" href="https://www.google.com/maps/dir/Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo/MASP,+São+Paulo/Parque+Trianon,+São+Paulo/Parque+Ibirapuera,+São+Paulo/Beco+do+Batman,+São+Paulo/Mercado+Municipal+de+São+Paulo/Liberdade,+São+Paulo" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+      <span data-i18n="regiao_map_btn">Ver mapa completo com todos os pontos</span>
+    </a>
+    <p style="font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;" data-i18n="regiao_hint">Ou toque em "Ver rota" em cada card abaixo para ir direto a um lugar específico.</p>
+
+    <div class="card culture" style="margin-top:20px;">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 9l9-6 9 6-9 6-9-6z"/><path d="M3 9v9l9 6 9-6V9"/></svg></div>
+      <div class="body">
+        <h3><span data-i18n="c_frei_t">Shopping e Centro de Convenções Frei Caneca</span> <span class="dist" data-i18n="c_frei_d">em frente</span></h3>
+        <p class="addr">R. Frei Caneca, 569 — Consolação</p>
+        <p data-i18n="c_frei_p">Ideal para quem veio para um congresso — é só atravessar a rua. Também tem cinema, restaurantes e lojas.</p>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Shopping+Frei+Caneca,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+      </div>
+    </div>
+
+    <div class="cat-label" data-i18n="cat_sp">Para conhecer São Paulo</div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M3 7l3-4h12l3 4M8 20v-6h8v6"/></svg></div>
+      <div class="body"><h3><span data-i18n="c_masp_t">MASP</span> <span class="dist">~1km</span></h3><p class="addr">Av. Paulista, 1578 — Bela Vista</p><p data-i18n="c_masp_p">Um dos museus mais importantes da América Latina.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=MASP,+Av.+Paulista+1578,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M12 2v6M8 8a4 4 0 0 0 8 0M6 22c0-5 2.5-8 6-8s6 3 6 8"/></svg></div>
+      <div class="body"><h3><span data-i18n="c_tri_t">Parque Trianon</span> <span class="dist">~1km</span></h3><p class="addr" data-i18n="c_tri_addr">Av. Paulista, s/n — bem em frente ao MASP</p><p data-i18n="c_tri_p">Um pedacinho de Mata Atlântica no meio da avenida, ótimo para uma pausa.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Parque+Trianon,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10c0-1-1-1.5-2-1.5h-3a2 2 0 0 1-2-2 2 2 0 0 1 .6-1.4 1 1 0 0 0-.6-1.7C13 5 12 3.7 12 2z"/></svg></div>
+      <div class="body"><h3 data-i18n="c_ibi_t">Parque Ibirapuera</h3><p class="addr">Av. Pedro Álvares Cabral — Vila Mariana</p><p data-i18n="c_ibi_p">O parque mais conhecido da cidade, com museus e ciclovia.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Parque+Ibirapuera,+São+Paulo&travelmode=transit" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><circle cx="13.5" cy="6.5" r=".5" fill="#3F5F4C"/><circle cx="17.5" cy="10.5" r=".5" fill="#3F5F4C"/><circle cx="8.5" cy="7.5" r=".5" fill="#3F5F4C"/><circle cx="6.5" cy="12.5" r=".5" fill="#3F5F4C"/><path d="M12 2a10 10 0 1 0 10 10c0-1-1-1.5-2-1.5h-3a2 2 0 0 1-2-2 2 2 0 0 1 .6-1.4 1 1 0 0 0-.6-1.7C13 5 12 3.7 12 2z"/></svg></div>
+      <div class="body"><h3 data-i18n="c_beco_t">Beco do Batman</h3><p class="addr">R. Medeiros de Albuquerque — Vila Madalena</p><p data-i18n="c_beco_p">Galeria de arte urbana a céu aberto, num dos bairros mais boêmios de SP.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Beco+do+Batman,+São+Paulo&travelmode=transit" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M6 3h12l2 5-8 13L4 8z"/><path d="M4 8h16M9 3l3 5 3-5"/></svg></div>
+      <div class="body"><h3 data-i18n="c_osc_t">Rua Oscar Freire</h3><p class="addr">Jardins</p><p data-i18n="c_osc_p">A rua mais chique de São Paulo — grifes, cafés e vitrines bonitas de se ver.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Rua+Oscar+Freire,+São+Paulo&travelmode=transit" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg></div>
+      <div class="body"><h3 data-i18n="c_lib_t">Liberdade</h3><p class="addr" data-i18n="c_lib_addr">Bairro japonês — Liberdade</p><p data-i18n="c_lib_p">Maior colônia japonesa fora do Japão: comidinhas, feira de artesanato aos fins de semana e lojinhas orientais.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Liberdade,+São+Paulo&travelmode=transit" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></div>
+      <div class="body"><h3 data-i18n="c_se_t">Sé &amp; Centro Histórico</h3><p class="addr" data-i18n="c_se_addr">Catedral da Sé, Pátio do Colégio, Pinacoteca</p><p data-i18n="c_se_p">O berço de São Paulo — arquitetura histórica e museus a céu aberto.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Catedral+da+Sé,+São+Paulo&travelmode=transit" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 9l1.5-5h15L21 9M3 9v10h18V9M3 9h18M9 13v6M15 13v6"/></svg></div>
+      <div class="body"><h3 data-i18n="c_merc_t">Mercado Municipal (Mercadão)</h3><p class="addr">R. da Cantareira, 306 — Centro</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Mercado+Municipal+de+São+Paulo&travelmode=transit" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMER POR PERTO -->
+  <section id="comer" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">7</div><h2 data-i18n="toc_7">Comer por perto</h2></div>
+    <p class="sec-sub" data-i18n="comer_sub">Algumas indicações para o dia a dia, a poucos minutos do apê.</p>
+
+    <div class="cat-label" data-i18n="eat_cafe">Café da manhã</div>
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 8h14v5a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2M6 3v2M10 3v2"/></svg></div>
+        <div class="body">
+          <h3><span data-i18n="c_bellap_t">Padaria Bella Paulista</span> <span class="dist">⭐4.5 · ~810m</span></h3>
+          <p class="addr">R. Haddock Lobo, 354 — Cerqueira César</p>
+          <p data-i18n="c_bellap_p">A padaria mais icônica de SP, aberta 24h — padaria, açougue, sushi e restaurante juntos.</p>
+          <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Padaria+Bella+Paulista,+São+Paulo&travelmode=walking">Ver rota →</a>
+        </div>
+      </div>
+    </div>
+    <div class="eat-list">
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">LYKKE Cookies &amp; Desserts</span><span class="eat-meta">⭐4.8 · ~220m</span></div>
+        <div class="eat-addr">R. Dona Antônia de Queirós, 103 — Cerqueira César</div>
+        <div class="eat-desc" data-i18n="eat_lykke_p">Cookies artesanais recheados, tortas e café.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=LYKKE+Cookies+%26+Desserts,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Bella Paim Café Pizza &amp; Bar</span><span class="eat-meta">⭐4.9 · ~200m</span></div>
+        <div class="eat-addr">R. Paim, 192 — Bela Vista</div>
+        <div class="eat-desc" data-i18n="eat_bellapaim_p">Padaria + bar; café da manhã completo, vira pizzaria à noite (8h–meia-noite).</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Bella+Paim+Café+Pizza+e+Bar,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Bakery Boulevard</span><span class="eat-meta">⭐4.5 · ~830m</span></div>
+        <div class="eat-addr">R. Piauí, 270 — Higienópolis</div>
+        <div class="eat-desc" data-i18n="eat_boulevard_p">A padaria famosa de Higienópolis — vitrine gigante de salgados e doces, pão na chapa.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Bakery+Boulevard,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Fabrique Pão e Café</span><span class="eat-meta">⭐4.5 · ~790m</span></div>
+        <div class="eat-addr">R. Itacolomi, 612 — Consolação</div>
+        <div class="eat-desc" data-i18n="eat_fabrique_p">Padaria/brunch estilo francês — croissants, ovos beneditinos.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Fabrique+Pão+e+Café,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+    </div>
+
+    <div class="cat-label" data-i18n="eat_almoco">Almoço</div>
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 3v18M3 8h4M3 13h4M14 3v18M18 3a4 4 0 0 1 0 8 4 4 0 0 1 0-8z"/></svg></div>
+        <div class="body">
+          <h3><span data-i18n="c_adriata_t">Adriata Restaurante</span> <span class="dist">⭐4.7 · ~180m</span></h3>
+          <p class="addr">R. Paim, 202 — Bela Vista</p>
+          <p data-i18n="c_adriata_p">Brasileira/contemporânea, porções generosas — picanha e frutos do mar. A mais pertinho de todas.</p>
+          <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Adriata+Restaurante,+São+Paulo&travelmode=walking">Ver rota →</a>
+        </div>
+      </div>
+    </div>
+    <div class="eat-list">
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Recanto da Bela Vista</span><span class="eat-meta">⭐4.3 · ~450m</span></div>
+        <div class="eat-addr">R. Rocha, 112 — Bela Vista</div>
+        <div class="eat-desc" data-i18n="eat_recanto_p">Comida caseira brasileira, estilo prato feito / self-service.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Recanto+da+Bela+Vista,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Jardan Restaurante</span><span class="eat-meta">⭐4.5 · aberto 24h · ~890m</span></div>
+        <div class="eat-addr">Av. Paulista, 2240 — Cerqueira César</div>
+        <div class="eat-desc" data-i18n="eat_jardan_p">Buffet por quilo/à la carte, tradicional na Paulista.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Jardan+Restaurante,+Av.+Paulista+2240,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+    </div>
+
+    <div class="cat-label" data-i18n="eat_jantar">Jantar</div>
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 3v18M3 8h4M3 13h4M14 3v18M18 3a4 4 0 0 1 0 8 4 4 0 0 1 0-8z"/></svg></div>
+        <div class="body">
+          <h3><span data-i18n="c_mancini_t">Famiglia Mancini</span> <span class="dist">⭐4.7 · ~760m</span></h3>
+          <p class="addr">R. Avanhandava, 81 — Bela Vista</p>
+          <p data-i18n="c_mancini_p">Uma instituição de São Paulo — trattoria clássica com buffet de antepastos, massas e música ao vivo. Chegue cedo, costuma ter fila.</p>
+          <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Famiglia+Mancini,+Rua+Avanhandava+81,+São+Paulo&travelmode=walking">Ver rota →</a>
+        </div>
+      </div>
+    </div>
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 3v18M3 8h4M3 13h4M14 3v18M18 3a4 4 0 0 1 0 8 4 4 0 0 1 0-8z"/></svg></div>
+        <div class="body">
+          <h3><span data-i18n="c_kome_t">Kome (Bela Vista)</span> <span class="dist">⭐4.8 · ~300m</span></h3>
+          <p class="addr">R. São Miguel, 24 — Cerqueira César</p>
+          <p data-i18n="c_kome_p">Japonês badalado, rodízio de sushi bem avaliado — considere reservar.</p>
+          <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Kome+Bela+Vista,+São+Paulo&travelmode=walking">Ver rota →</a>
+        </div>
+      </div>
+    </div>
+    <div class="eat-list">
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Bistrô Avanhandava</span><span class="eat-meta">⭐4.8 · ~470m</span></div>
+        <div class="eat-addr">R. Avanhandava, 378 — Bela Vista</div>
+        <div class="eat-desc" data-i18n="eat_bistroav_p">Franco-contemporâneo — a picanha de cordeiro com risoto de funghi é o queridinho.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Bistrô+Avanhandava,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Cantina C...Que Sabe!</span><span class="eat-meta">⭐4.6 · ~650m</span></div>
+        <div class="eat-addr">R. Rui Barbosa, 192 — Bela Vista</div>
+        <div class="eat-desc" data-i18n="eat_cantinaq_p">Cantina italiana tradicional, animada, com música ao vivo.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Rua+Rui+Barbosa+192,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+    </div>
+
+    <div class="card culture" style="border-color:var(--gold);border-width:1.5px;">
+      <div class="card-row">
+        <div class="icon" style="background:rgba(184,137,47,.18);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8892F" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <div class="body">
+          <h3 data-i18n="c_matarazzo_t">Hotel Matarazzo (Rosewood)</h3>
+          <p class="addr">R. Itapeva, 435 — Bela Vista · ~670m</p>
+          <p data-i18n="c_matarazzo_p">Complexo com vários restaurantes: Le Jardin (fine dining, ⭐4.2), Blaise (francês casual), Taraz (chef Felipe Bronze), Rabo di Galo (drinques autorais) e Bela Vista Bar. Ótimo para ocasião especial — reserve com antecedência.</p>
+          <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Rosewood+São+Paulo,+São+Paulo&travelmode=walking">Ver rota →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-label" data-i18n="eat_jardins">Jardins (~2km, vale o Uber)</div>
+    <div class="eat-list">
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Terraço Jardins</span><span class="eat-meta">⭐4.7</span></div>
+        <div class="eat-addr">Alameda Santos, 2233 (Hotel Renaissance)</div>
+        <div class="eat-desc" data-i18n="eat_terraco_p">Buffet/brunch em ambiente de jardim interno — bom para grupos.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Terraço+Jardins,+Alameda+Santos+2233,+São+Paulo&travelmode=transit">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Tuy Bar, Cocina</span><span class="eat-meta">⭐4.5</span></div>
+        <div class="eat-addr">R. Padre João Manuel, 1156 — Jardins</div>
+        <div class="eat-desc" data-i18n="eat_tuy_p">Espanhola/mediterrânea, pratos generosos — cordeiro 72h e polvo são destaque.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Tuy+Bar+Cocina,+São+Paulo&travelmode=transit">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Altruísta Osteria e Enoteca</span><span class="eat-meta">⭐4.9</span></div>
+        <div class="eat-addr">Alameda Campinas, 952 — Jardins</div>
+        <div class="eat-desc" data-i18n="eat_altruista_p">Italiano premiadíssimo — massas e risotos elogiadíssimos, carta de vinhos enorme.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Altruísta+Osteria+e+Enoteca,+São+Paulo&travelmode=transit">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Bistrot de Paris</span><span class="eat-meta">⭐4.6</span></div>
+        <div class="eat-addr">R. Augusta, 2542 — Jardins</div>
+        <div class="eat-desc" data-i18n="eat_bistrotparis_p">Francês clássico premiado — beef wellington, confit de pato, mille-feuille.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Bistrot+de+Paris,+Rua+Augusta+2542,+São+Paulo&travelmode=transit">Ver rota →</a>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name">Miró Gastronomia</span><span class="eat-meta">⭐4.7</span></div>
+        <div class="eat-addr">Alameda Lorena, 2101 — Jardim Paulista (qua–dom, à noite)</div>
+        <div class="eat-desc" data-i18n="eat_miro_p">Ambiente elegante e moderno — ótimo para jantar romântico ou com amigos.</div>
+        <a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Miró+Gastronomia,+São+Paulo&travelmode=transit">Ver rota →</a>
+      </div>
+    </div>
+
+    <div class="cat-label" data-i18n="eat_freicaneca">No Shopping Frei Caneca (em frente)</div>
+    <div class="eat-list">
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name" data-i18n="eat_praca_t">Praça de alimentação (2º piso)</span></div>
+        <div class="eat-desc" data-i18n="eat_praca_p">Mr. Cheney (panquecas/cookies ⭐4.8), Coração Mineiro (buffet mineiro ⭐4.0), Divino Fogão (self-service ⭐3.8), Chiquinho Sorvetes e outros.</div>
+      </div>
+      <div class="eat-item">
+        <div class="eat-top"><span class="eat-name" data-i18n="eat_piso3_t">Piso de restaurantes (3º piso)</span></div>
+        <div class="eat-desc" data-i18n="eat_piso3_p">Outback Steakhouse (⭐4.4), Temakeria e Cia (temaki à vontade, ⭐4.1), Pateo da Luz (brasileiro, música ao vivo, ⭐4.2), North Bar e Grill (⭐4.3), FREEDOM Kitchen &amp; Bar (⭐4.4).</div>
+      </div>
+    </div>
+    <p style="font-size:11.5px;color:var(--ink-soft);text-align:center;" data-i18n="eat_footnote">Avaliações e horários podem mudar — confira antes de ir.</p>
+  </section>
+
+  <!-- ROTEIRO -->
+  <section id="roteiro" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">8</div><h2 data-i18n="toc_roteiro">Roteiro sugerido</h2></div>
+    <p class="sec-sub" data-i18n="roteiro_sub2">Um dia por tela — deslize para o lado para ver mais.</p>
+
+    <div class="block">
+      <h3 data-i18n="roteiro_ask_t">📅 Quantos dias você vai ficar?</h3>
+      <div style="display:flex;gap:8px;margin:10px 0 0;">
+        <input type="number" id="roteiroDias" min="1" max="30" placeholder="ex: 3" oninput="filtrarDias()" style="flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-size:14px;font-family:'Work Sans',sans-serif;color:var(--ink);background:var(--paper);">
+        <button class="btn" style="width:auto;padding:11px 20px;flex:0 0 auto;" onclick="filtrarDias()"><span data-i18n="roteiro_ask_btn">Montar</span></button>
+      </div>
+    </div>
+
+    <div class="day-carousel" id="dayCarousel">
+      <div class="day-card" data-day="1">
+        <div class="day-illus"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.4"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M5 5l1.5 1.5M17.5 17.5L19 19M3 12h2M19 12h2M5 19l1.5-1.5M17.5 6.5L19 5"/></svg></div>
+        <div class="day-tag" data-i18n="day1_tag">DIA 1</div>
+        <h3 data-i18n="day1_t">MASP, Paulista e Oscar Freire</h3>
+        <p data-i18n="day1_p">Manhã: MASP e Parque Trianon (10 min a pé). Almoço na região da Paulista. Tarde: Rua Oscar Freire ou Beco do Batman.</p>
+      </div>
+      <div class="day-card" data-day="2">
+        <div class="day-illus"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 4v5"/></svg></div>
+        <div class="day-tag" data-i18n="day2_tag">DIA 2</div>
+        <h3 data-i18n="day2_t">Mercadão e Centro Histórico</h3>
+        <p data-i18n="day2_p">Manhã: Mercado Municipal (Mercadão). Tarde: Centro Histórico, com a Catedral da Sé e o Pátio do Colégio.</p>
+      </div>
+      <div class="day-card" data-day="3">
+        <div class="day-illus"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.4"><path d="M12 2a10 10 0 1 0 10 10c0-1-1-1.5-2-1.5h-3a2 2 0 0 1-2-2 2 2 0 0 1 .6-1.4 1 1 0 0 0-.6-1.7C13 5 12 3.7 12 2z"/></svg></div>
+        <div class="day-tag" data-i18n="day3_tag">DIA 3</div>
+        <h3 data-i18n="day3_t">Ibirapuera e Liberdade</h3>
+        <p data-i18n="day3_p">Manhã: Parque Ibirapuera. Almoço na Liberdade — se for domingo, ainda pega a feira de artesanato.</p>
+      </div>
+      <div class="day-card" data-day="4">
+        <div class="day-illus"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.4"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg></div>
+        <div class="day-tag" data-i18n="day4_tag">DIA 4+</div>
+        <h3 data-i18n="day4_t">Vila Madalena e além</h3>
+        <p data-i18n="day4_p">Com mais tempo: Vila Madalena com calma, a Pinacoteca, e até uma escapada para a Zona Sul da cidade.</p>
+      </div>
+      <div class="day-card" data-day="business">
+        <div class="day-illus"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.4"><rect x="4" y="7" width="16" height="12" rx="1"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></div>
+        <div class="day-tag" data-i18n="roteiro_neg_tag">A NEGÓCIOS</div>
+        <h3 data-i18n="roteiro_neg_t">Aqui a negócios / evento</h3>
+        <p data-i18n="roteiro_neg_p">Frei Caneca é literalmente em frente. Para jantar depois do trabalho, Famiglia Mancini ou os restaurantes da Paulista ficam a poucos minutos.</p>
+      </div>
+    </div>
+    <p class="scroll-hint" data-i18n="roteiro_scroll_hint">← deslize para o lado para ver mais dias →</p>
+  </section>
+
+  <!-- METRÔ -->
+  <section id="metro" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">9</div><h2 data-i18n="toc_8">Metrô &amp; mobilidade</h2></div>
+    <p class="sec-sub" data-i18n="metro_sub">As estações mais próximas, todas a poucos minutos a pé.</p>
+    <div class="card transit">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8892F" stroke-width="1.8"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 12h16M8 18l-2 3M16 18l2 3"/><circle cx="8" cy="9" r="1"/><circle cx="16" cy="9" r="1"/></svg></div>
+      <div class="body"><h3><span data-i18n="m_hig_t">Higienópolis-Mackenzie</span> <span class="dist">~11 min</span> <span class="line-badge line-amarela" data-i18n="line_amarela">Linha Amarela</span></h3><p data-i18n="m_hig_p">A estação mais próxima do apê. Conecta direto com a linha Verde na Paulista.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Estação+Higienópolis-Mackenzie,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card transit">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8892F" stroke-width="1.8"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 12h16M8 18l-2 3M16 18l2 3"/><circle cx="8" cy="9" r="1"/><circle cx="16" cy="9" r="1"/></svg></div>
+      <div class="body"><h3><span data-i18n="m_cons_t">Consolação</span> <span class="line-badge line-verde" data-i18n="line_verde">Linha Verde</span></h3><p data-i18n="m_cons_p">Outra opção próxima, na linha Verde.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Estação+Consolação,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card transit">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8892F" stroke-width="1.8"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 12h16M8 18l-2 3M16 18l2 3"/><circle cx="8" cy="9" r="1"/><circle cx="16" cy="9" r="1"/></svg></div>
+      <div class="body"><h3><span data-i18n="m_tri_t">Trianon-MASP</span> <span class="line-badge line-verde" data-i18n="line_verde">Linha Verde</span></h3><p data-i18n="m_tri_p">Desce direto na Av. Paulista, em frente ao museu.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Estação+Trianon-MASP,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card transit">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8892F" stroke-width="1.8"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 12h16M8 18l-2 3M16 18l2 3"/><circle cx="8" cy="9" r="1"/><circle cx="16" cy="9" r="1"/></svg></div>
+      <div class="body"><h3><span data-i18n="m_bri_t">Brigadeiro</span> <span class="line-badge line-verde" data-i18n="line_verde">Linha Verde</span></h3><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Estação+Brigadeiro,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);" data-i18n="metro_closing">Corredores de ônibus na Consolação, 9 de Julho, 23 de Maio e Paulista levam a praticamente qualquer parte da cidade. Uber e 99 funcionam bem por toda São Paulo.</p>
+
+    <div class="block" style="margin-top:22px;">
+      <h3 data-i18n="apps_t">📱 Apps úteis</h3>
+      <p data-i18n="apps_p">Uber e 99 são os apps de transporte mais usados. Para comida, iFood e Rappi entregam bem na região. Se chegar sem internet, tem loja de operadora (chip/eSIM) dentro do Shopping Frei Caneca.</p>
+    </div>
+  </section>
+
+  <!-- TELEFONES -->
+  <section id="telefones" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">10</div><h2 data-i18n="toc_9">Telefones úteis</h2></div>
+    <ul class="phones">
+      <li><span>Kamila<span class="who" data-i18n="tel_kamila"> · WhatsApp</span></span><a href="https://wa.me/5511963040944" target="_blank" rel="noopener"><b>(11) 96304-0944</b></a></li>
+      <li><span><span data-i18n="tel_portaria_label">Portaria do prédio</span><span class="who" data-i18n="tel_portaria"> · pelo interfone, ramal do apê</span></span><b>94</b></li>
+      <li><span><span data-i18n="tel_policia_label">Polícia</span><span class="who" data-i18n="tel_policia"> · emergência</span></span><a href="tel:190"><b>190</b></a></li>
+      <li><span><span data-i18n="tel_samu_label">SAMU</span><span class="who" data-i18n="tel_samu"> · emergência médica</span></span><a href="tel:192"><b>192</b></a></li>
+      <li><span><span data-i18n="tel_bomb_label">Bombeiros</span><span class="who" data-i18n="tel_bomb"> · emergência</span></span><a href="tel:193"><b>193</b></a></li>
+    </ul>
+
+    <h3 style="font-size:15px;margin:26px 0 10px;" data-i18n="consul_t">🌎 Consulados em São Paulo</h3>
+    <ul class="phones">
+      <li><span><span data-i18n="consul_us">Estados Unidos</span><span class="who">R. Henri Dunant, 500</span></span><a href="tel:+551132505000"><b>(11) 3250-5000</b></a></li>
+      <li><span><span data-i18n="consul_fr">França</span><span class="who">Av. Paulista, 1842</span></span><a href="tel:+551133715400"><b>(11) 3371-5400</b></a></li>
+      <li><span><span data-i18n="consul_es">Espanha</span><span class="who">Av. Brasil, 948</span></span><a href="tel:+551130872600"><b>(11) 3087-2600</b></a></li>
+      <li><span><span data-i18n="consul_cn">China</span><span class="who">R. Estados Unidos, 1071</span></span><a href="tel:+551130829877"><b>(11) 3082-9877</b></a></li>
+    </ul>
+  </section>
+
+  <!-- HOSPITAIS -->
+  <section id="hospitais" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">11</div><h2 data-i18n="cat_hosp">Hospitais próximos</h2></div>
+    <div class="card health">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A84B2A" stroke-width="1.8"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5C2 15 12 21 12 21s3.5-2.1 6.1-4.8"/><path d="M12 9v4M10 11h4"/></svg></div>
+      <div class="body"><h3><span data-i18n="c_sirio_t">Hospital Sírio-Libanês</span> <span class="dist">~500m</span></h3><p class="addr">R. Dona Adma Jafet, 91 — Bela Vista</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Hospital+Sírio-Libanês,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card health">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A84B2A" stroke-width="1.8"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5C2 15 12 21 12 21s3.5-2.1 6.1-4.8"/><path d="M12 9v4M10 11h4"/></svg></div>
+      <div class="body"><h3 data-i18n="c_9dj_t">Hospital 9 de Julho</h3><p class="addr">R. Peixoto Gomide, 545 — Cerqueira César</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Hospital+9+de+Julho,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card health">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A84B2A" stroke-width="1.8"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5C2 15 12 21 12 21s3.5-2.1 6.1-4.8"/><path d="M12 9v4M10 11h4"/></svg></div>
+      <div class="body"><h3 data-i18n="c_sc_t">Hospital Santa Catarina</h3><p class="addr">Av. Paulista, 200 — Bela Vista</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Hospital+Santa+Catarina,+Av.+Paulista+200,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card health">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A84B2A" stroke-width="1.8"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5C2 15 12 21 12 21s3.5-2.1 6.1-4.8"/><path d="M12 9v4M10 11h4"/></svg></div>
+      <div class="body"><h3 data-i18n="c_oc_t">Hospital Alemão Oswaldo Cruz</h3><p class="addr">R. Treze de Maio, 1815 — Bela Vista</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Hospital+Alemão+Oswaldo+Cruz,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card health">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A84B2A" stroke-width="1.8"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5C2 15 12 21 12 21s3.5-2.1 6.1-4.8"/><path d="M12 9v4M10 11h4"/></svg></div>
+      <div class="body"><h3 data-i18n="c_sam_t">Hospital Samaritano (Higienópolis)</h3><p class="addr">R. Cons. Brotero, 1486 — Higienópolis</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Hospital+Samaritano+Higienópolis,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+    <div class="card health">
+      <div class="card-row">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A84B2A" stroke-width="1.8"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5C2 15 12 21 12 21s3.5-2.1 6.1-4.8"/><path d="M12 9v4M10 11h4"/></svg></div>
+      <div class="body"><h3 data-i18n="c_pm_t">Pro Matre Paulista</h3><p class="addr">Al. Joaquim Eugênio de Lima, 383 — Bela Vista</p><p data-i18n="c_pm_p">Se você veio para tratamento ou recuperação, farmácias e o mini mercado do prédio ficam bem à mão, e o apartamento é silencioso para descansar.</p><a class="route" data-i18n="route" href="https://www.google.com/maps/dir/?api=1&origin=Rua+Doutor+Penaforte+Mendes,+160,+São+Paulo&destination=Pro+Matre+Paulista,+São+Paulo&travelmode=walking" target="_blank" rel="noopener">Ver rota →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">12</div><h2 data-i18n="toc_11">FAQ rápido</h2></div>
+    <div class="block">
+      <h3 data-i18n="faq_q1">✈️ Qual aeroporto é mais perto?</h3>
+      <p data-i18n="faq_a1">Congonhas (CGH) é o mais próximo, cerca de 20-30 min de carro. Guarulhos (GRU), o aeroporto internacional, fica mais longe — em torno de 45-60 min, dependendo do trânsito.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q2">💳 Cartão ou dinheiro?</h3>
+      <p data-i18n="faq_a2">Em São Paulo praticamente tudo aceita cartão e Pix, do mercado ao taxi. Não é necessário andar com muito dinheiro em espécie.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q3">💊 Farmácia aberta a qualquer hora?</h3>
+      <p data-i18n="faq_a3">Ultrafarma 24h — Av. Paulista, 329, Bela Vista, a cerca de 1km do apê.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q4">🕐 Dá para sair mais tarde?</h3>
+      <p data-i18n="faq_a4">Sim, por R$50 mediante disponibilidade. É só pedir pelo botão "Pedir hora adicional" na seção "Bom saber".</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q5">🚬 Posso fumar?</h3>
+      <p data-i18n="faq_a5">Só na área externa (varanda), com a porta de vidro fechada.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q6">👥 Posso receber visitas?</h3>
+      <p data-i18n="faq_a6">Não — visitas externas não são permitidas, para a segurança de todos no condomínio.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q7">🌦️ Como é o clima em São Paulo?</h3>
+      <p data-i18n="faq_a7">Pode chover a qualquer hora, mesmo com sol — vale sempre ter um guarda-chuva por perto. As temperaturas variam bastante ao longo do dia.</p>
+      <a class="route" data-i18n="weather_btn" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+em+S%C3%A3o+Paulo" target="_blank" rel="noopener" style="margin-top:8px;">Ver previsão de hoje →</a>
+    </div>
+    <div class="block">
+      <h3 data-i18n="conv_t">💱 Conversor de moeda</h3>
+      <p data-i18n="conv_p">Uma estimativa rápida em reais — confira a cotação atual antes de trocar valores grandes.</p>
+      <div style="display:flex;gap:8px;margin:10px 0;">
+        <input type="number" id="convAmount" placeholder="100" oninput="convertCurrency()" style="flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-size:14px;font-family:'Work Sans',sans-serif;color:var(--ink);background:var(--paper);">
+        <select id="convCurrency" onchange="convertCurrency()" style="flex:0 0 auto;border:1px solid var(--line);border-radius:999px;padding:11px 14px;font-size:14px;font-family:'Work Sans',sans-serif;color:var(--ink);background:var(--paper);">
+          <option value="5.16">USD (US$)</option>
+          <option value="5.91">EUR (€)</option>
+        </select>
+      </div>
+      <p id="convResult" style="font-family:'Fraunces',serif;font-size:18px;color:var(--forest-dark);margin:0 0 6px;">—</p>
+      <p style="font-size:11px;color:var(--ink-soft);margin:0;" data-i18n="conv_note">Cotação aproximada de 18/09/2026 (Banco Central). As taxas mudam diariamente.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q8">💵 Preciso dar gorjeta?</h3>
+      <p data-i18n="faq_a8">Não é obrigatória no Brasil, mas 10% é comum em restaurantes (às vezes já incluído na conta).</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q12">🔒 Alguma dica de segurança?</h3>
+      <p data-i18n="faq_a12">Como em qualquer grande cidade: evite usar o celular muito exposto na rua, prefira Uber/99 à noite, e fique tranquilo — a região é bem movimentada e monitorada.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q9">📶 O Wi-Fi caiu, o que eu faço?</h3>
+      <p data-i18n="faq_a9">Tente reiniciar o roteador (desligar e ligar de novo). Se continuar sem funcionar, chame a Kamila no WhatsApp.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q10">❄️ O ar-condicionado não liga</h3>
+      <p data-i18n="faq_a10">Confira se o controle remoto tem pilha e se está apontado direto para o aparelho. Se não resolver, chame a Kamila.</p>
+    </div>
+    <div class="block">
+      <h3 data-i18n="faq_q11">🚿 O chuveiro está sem água quente</h3>
+      <p data-i18n="faq_a11">Verifique se o registro do chuveiro está na posição de aquecimento (geralmente inverno/verão). Persistindo, chame a Kamila.</p>
+    </div>
+  </section>
+
+  <!-- FRASES EM PORTUGUÊS -->
+  <section id="idioma" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">13</div><h2 data-i18n="toc_idioma">Frases em português</h2></div>
+    <p class="sec-sub" data-i18n="idioma_sub">Frases úteis para o dia a dia por aqui.</p>
+
+    <table class="pricing" style="margin-bottom:8px;">
+      <tr><th data-i18n="fr_col_pt">Português</th><th data-i18n="fr_col_mean">Significado</th></tr>
+      <tr><td>Olá / Oi</td><td data-i18n="fr_1">Hello / Hi</td></tr>
+      <tr><td>Bom dia / Boa tarde / Boa noite</td><td data-i18n="fr_2">Good morning / afternoon / evening</td></tr>
+      <tr><td>Por favor</td><td data-i18n="fr_3">Please</td></tr>
+      <tr><td>Obrigado(a)</td><td data-i18n="fr_4">Thank you</td></tr>
+      <tr><td>Com licença</td><td data-i18n="fr_5">Excuse me</td></tr>
+      <tr><td>Quanto custa?</td><td data-i18n="fr_6">How much is it?</td></tr>
+      <tr><td>Onde fica o banheiro?</td><td data-i18n="fr_7">Where's the bathroom?</td></tr>
+      <tr><td>Você fala inglês?</td><td data-i18n="fr_8">Do you speak English?</td></tr>
+      <tr><td>Não falo português</td><td data-i18n="fr_9">I don't speak Portuguese</td></tr>
+      <tr><td>Preciso de um médico</td><td data-i18n="fr_10">I need a doctor</td></tr>
+      <tr><td>Socorro! / Ajuda!</td><td data-i18n="fr_11">Help!</td></tr>
+      <tr><td>Chama a polícia</td><td data-i18n="fr_12">Call the police</td></tr>
+    </table>
+  </section>
+
+  <!-- PASSEIOS & CARRO -->
+  <section id="passeios" style="margin-top:44px;">
+    <div class="sec-head"><div class="chapter-n">14</div><h2 data-i18n="toc_passeios">Passeios &amp; aluguel de carro</h2></div>
+    <p class="sec-sub" data-i18n="passeios_sub">Reserve com antecedência e sem fila, direto com nossos parceiros.</p>
+
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M9 18l6-6-6-6"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <div class="body">
+          <h3 data-i18n="passeios_gyg_t">🎟️ Todos os passeios em SP</h3>
+          <p data-i18n="passeios_gyg_p">Tours, museus e experiências com reserva antecipada — evite fila e garanta seu horário.</p>
+          <a class="route" href="https://www.getyourguide.com/s/?q=S%C3%A3o+Paulo&partner_id=ONITOWD&cmp=share_to_earn" target="_blank" rel="noopener" data-i18n="passeios_gyg_btn">Ver todos os passeios →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 21l9-16 9 16H3z"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div class="body">
+          <h3 data-i18n="passeios_city_t">🚶 City tour a pé</h3>
+          <p data-i18n="passeios_city_p">Conheça o Centro Histórico, a Paulista e os principais pontos com um guia local.</p>
+          <a class="route" href="https://www.getyourguide.com/s/?q=S%C3%A3o+Paulo+city+tour&partner_id=ONITOWD&cmp=share_to_earn" target="_blank" rel="noopener" data-i18n="passeios_city_btn">Ver city tours →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><path d="M3 3v18M3 8h4M3 13h4M14 3v18M18 3a4 4 0 0 1 0 8 4 4 0 0 1 0-8z"/></svg></div>
+        <div class="body">
+          <h3 data-i18n="passeios_food_t">🍝 Tour gastronômico</h3>
+          <p data-i18n="passeios_food_p">Prove o melhor da comida paulistana com um guia especializado, incluindo o Mercadão.</p>
+          <a class="route" href="https://www.getyourguide.com/s/?q=S%C3%A3o+Paulo+food+tour&partner_id=ONITOWD&cmp=share_to_earn" target="_blank" rel="noopener" data-i18n="passeios_food_btn">Ver tours gastronômicos →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card culture">
+      <div class="card-row">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M3 7l3-4h12l3 4M8 20v-6h8v6"/></svg></div>
+        <div class="body">
+          <h3 data-i18n="passeios_masp_t">🖼️ Ingresso MASP sem fila</h3>
+          <p data-i18n="passeios_masp_p">Garanta seu horário no museu que fica a poucos passos do apê.</p>
+          <a class="route" href="https://www.getyourguide.com/s/?q=MASP&partner_id=ONITOWD&cmp=share_to_earn" target="_blank" rel="noopener" data-i18n="passeios_masp_btn">Ver ingressos MASP →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card culture" style="border-color:var(--gold);border-width:1.5px;">
+      <div class="card-row">
+        <div class="icon" style="background:rgba(184,137,47,.18);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8892F" stroke-width="1.8"><path d="M5 17h14M5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM19 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM5 17l1.5-6h11L19 17M6 11l1-4h10l1 4"/></svg></div>
+        <div class="body">
+          <h3><span data-i18n="passeios_car_t">🚗 Aluguel de carro</span> <span class="dist" data-i18n="passeios_car_badge">5% OFF</span></h3>
+          <p data-i18n="passeios_car_p">Compare as melhores tarifas para o seu período de estadia. Use o cupom <b>DOMFERIAS</b> e ganhe 5% de desconto — vale só reservando pelo botão abaixo.</p>
+          <a class="btn gold" style="width:auto;padding:9px 18px;display:inline-flex;" href="https://www.rentcars.com/pt-br/?requestorid=10969&utm_source=domferias.netlify.app&utm_medium=afiliado-link" target="_blank" rel="noopener" data-i18n="passeios_car_btn">Comparar tarifas com 5% OFF →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <svg class="heart" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3F5F4C" stroke-width="1.6"><path d="M12 21s-7.5-4.6-10-9.3C.4 7.9 2.4 4 6.2 4 8.6 4 10.6 5.4 12 7.4 13.4 5.4 15.4 4 17.8 4c3.8 0 5.8 3.9 4.2 7.7C19.5 16.4 12 21 12 21z"/></svg>
+    <p class="script" style="font-size:22px;color:var(--forest-dark);" data-i18n="footer_script">Espero que sua estadia seja tranquila</p>
+    <p data-i18n="footer_p">e que São Paulo te receba tão bem quanto eu tentei receber você. Qualquer coisa, é só chamar.</p>
+    <a class="btn gold" style="margin:16px 0 10px;" href="https://wa.me/5511963040944" target="_blank" rel="noopener"><span data-i18n="footer_btn">Chamar a Kamila no WhatsApp</span></a>
+    <button class="btn outline" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C4436" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span data-i18n="pdf_btn">Salvar guia em PDF</span>
+    </button>
+    <div class="hero-sign">Kamila<span data-i18n="hero_sub">SUPERHOST · 4 ANOS RECEBENDO HÓSPEDES · 5,0 ★</span></div>
+  </footer>
+
+</div>
+
+<button class="back-to-toc" onclick="goTo('toc')" aria-label="Voltar ao sumário">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F8F5EC" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div id="searchResults" class="search-results" style="display:none;"></div>
+<div class="bottom-bar">
+  <div class="search-box">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8892F" stroke-width="2.3"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" id="searchInput" placeholder="Pesquisar no guia..." oninput="doSearch(this.value)">
+  </div>
+  <a class="wa-fab" href="https://wa.me/5511963040944" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 448 512" fill="#F8F5EC"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  </a>
+</div>
+
+<script>
+function copyVal(el, text){
+  var icon = el.querySelector('.copy-ic');
+  var restore = function(){
+    el.classList.remove('copied');
+    el.childNodes[0].textContent = text;
+  };
+  function done(){
+    el.classList.add('copied');
+    el.childNodes[0].textContent = text + ' ✓';
+    setTimeout(restore, 1500);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(done);
+  } else { done(); }
+}
+
+function sendWA(key, phone, kamilaNote){
+  phone = phone || '5511963040944';
+  var dict = I18N[currentLang] || I18N.pt;
+  var ptMsg = I18N.pt[key];
+  var msg = ptMsg;
+  if(currentLang !== 'pt' && dict[key]){
+    msg = dict[key] + '\n\n🇧🇷 ' + ptMsg;
+  }
+  if(kamilaNote){ msg += '\n\n' + kamilaNote; }
+  window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(msg), '_blank');
+}
+
+function logEvent(type){
+  var btn = document.getElementById(type === 'checkin' ? 'qaCheckin' : 'qaCheckout');
+  var key = type === 'checkin' ? 'msg_checkin' : 'msg_checkout';
+  if(btn){
+    var original = btn.innerHTML;
+    btn.classList.add('confirmed');
+    btn.innerHTML = '✓';
+    setTimeout(function(){ btn.classList.remove('confirmed'); btn.innerHTML = original; }, 2500);
+  }
+  var note = type === 'checkin' ? '💡 Kamila: responda fixando o link do guia aqui na conversa, assim o hóspede não perde o acesso durante a estadia!' : null;
+  sendWA(key, null, note);
+  if(type === 'checkout'){
+    document.querySelectorAll('.review-ask').forEach(function(el){ el.style.display = 'block'; });
+  }
+}
+
+var searchIndex = [];
+function normalizeTxt(s){
+  return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+}
+function buildSearchIndex(){
+  searchIndex = [];
+  var nodes = document.querySelectorAll('.wrap [data-i18n], .wrap .addr, .wrap dd, .wrap td, .wrap .dist');
+  nodes.forEach(function(node){
+    var txt = node.textContent.replace(/\s+/g,' ').trim();
+    if(txt.length < 2) return;
+    if(node.closest('#searchResults')) return;
+    searchIndex.push({node: node, text: txt, norm: normalizeTxt(txt)});
+  });
+}
+function doSearch(query){
+  var box = document.getElementById('searchResults');
+  var q = normalizeTxt(query);
+  if(q.length < 2){ box.style.display = 'none'; box.innerHTML = ''; return; }
+  var matches = searchIndex.filter(function(item){ return item.norm.indexOf(q) !== -1; }).slice(0, 7);
+  box.innerHTML = '';
+  if(matches.length === 0){
+    var noneTxt = (I18N[currentLang] && I18N[currentLang].search_none) || 'Nada encontrado.';
+    box.innerHTML = '<div class="none">'+noneTxt+'</div>';
+  } else {
+    matches.forEach(function(item, i){
+      var btn = document.createElement('button');
+      var snippet = item.text.length > 70 ? item.text.slice(0,70) + '…' : item.text;
+      btn.textContent = snippet;
+      btn.onclick = function(){
+        item.node.scrollIntoView({behavior:'smooth', block:'center'});
+        item.node.classList.add('search-hit');
+        setTimeout(function(){ item.node.classList.remove('search-hit'); }, 1600);
+        box.style.display = 'none';
+      };
+      box.appendChild(btn);
+    });
+  }
+  box.style.display = 'block';
+}
+
+function filtrarDias(){
+  var n = parseInt(document.getElementById('roteiroDias').value, 10);
+  var cards = document.querySelectorAll('#dayCarousel .day-card');
+  cards.forEach(function(card){
+    var d = card.getAttribute('data-day');
+    if(!n || n < 1){ card.style.display = ''; return; }
+    if(d === 'business'){ card.style.display = ''; return; }
+    card.style.display = (parseInt(d,10) <= n) ? '' : 'none';
+  });
+}
+
+function convertCurrency(){
+  var amount = parseFloat(document.getElementById('convAmount').value);
+  var rate = parseFloat(document.getElementById('convCurrency').value);
+  var out = document.getElementById('convResult');
+  if(!amount || amount <= 0){ out.textContent = '—'; return; }
+  var result = (amount * rate).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+  out.textContent = 'R$ ' + result;
+}
+
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+}
+
+var I18N = {
+  pt: {
+    lang_switch:"Idioma", search_placeholder:"Pesquisar no guia...", search_none:"Nada encontrado.",
+    hero_welcome:"Bem-vindo(a)", hero_title:"à sua próxima hospedagem",
+    hero_p:"Este é o seu guia de estadia — tudo o que você precisa para chegar, se sentir em casa e aproveitar São Paulo, num só lugar.",
+    hero_sign:"com carinho, Kamila", hero_sub:"SUPERHOST · 4 ANOS RECEBENDO HÓSPEDES · 5,0 ★",
+    toc_title:"Neste guia", toc_1:"Chegada & check-in", toc_2:"O apartamento", toc_3:"O condomínio", toc_4:"Bom saber", toc_5:"Saída & checkout", toc_6:"Ao redor & mapa", toc_7:"Comer por perto", toc_8:"Metrô & mobilidade", toc_9:"Telefones úteis", toc_11:"FAQ rápido",
+    comer_sub:"Algumas indicações para o dia a dia, a poucos minutos do apê.",
+    c_donajulia_t:"Dona Julia Restaurante e Grill", c_donajulia_p:"Comida caseira brasileira, self-service e à la carte — bom para um almoço sem enrolação.",
+    c_baoba_t:"Baobá Café", c_baoba_p:"Cafés especiais de produção própria — ótimo para um café da manhã ou uma pausa.",
+    c_giraffas_t:"Giraffas", c_giraffas_d:"em frente", c_giraffas_p:"Prático e rápido, dentro do shopping em frente ao prédio — bom para quando o tempo é curto.",
+    c_zena_t:"Zena Cucina", c_zena_p:"Italiana, premiada pelo Guia Michelin — ótima opção para um jantar mais especial.",
+    c_mancini_t:"Famiglia Mancini", c_mancini_p:"Uma instituição de São Paulo — trattoria clássica com buffet de antepastos, massas e música ao vivo. Chegue cedo, costuma ter fila.",
+    c_mamma_t:"Cantina Mamma Celeste", c_mamma_p:"Cantina de bairro no coração do Bixiga, massas caseiras fartas — bem tradicional, sem pretensão.",
+    eat_cafe:"Café da manhã", eat_almoco:"Almoço", eat_jantar:"Jantar", eat_jardins:"Jardins (~2km, vale o Uber)", eat_freicaneca:"No Shopping Frei Caneca (em frente)",
+    c_bellap_t:"Padaria Bella Paulista", c_bellap_p:"A padaria mais icônica de SP, aberta 24h — padaria, açougue, sushi e restaurante juntos.",
+    eat_lykke_p:"Cookies artesanais recheados, tortas e café.",
+    eat_bellapaim_p:"Padaria + bar; café da manhã completo, vira pizzaria à noite (8h–meia-noite).",
+    eat_boulevard_p:"A padaria famosa de Higienópolis — vitrine gigante de salgados e doces, pão na chapa.",
+    eat_fabrique_p:"Padaria/brunch estilo francês — croissants, ovos beneditinos.",
+    c_adriata_t:"Adriata Restaurante", c_adriata_p:"Brasileira/contemporânea, porções generosas — picanha e frutos do mar. A mais pertinho de todas.",
+    eat_recanto_p:"Comida caseira brasileira, estilo prato feito / self-service.",
+    eat_jardan_p:"Buffet por quilo/à la carte, tradicional na Paulista.",
+    c_kome_t:"Kome (Bela Vista)", c_kome_p:"Japonês badalado, rodízio de sushi bem avaliado — considere reservar.",
+    eat_bistroav_p:"Franco-contemporâneo — a picanha de cordeiro com risoto de funghi é o queridinho.",
+    eat_cantinaq_p:"Cantina italiana tradicional, animada, com música ao vivo.",
+    c_matarazzo_t:"Hotel Matarazzo (Rosewood)", c_matarazzo_p:"Complexo com vários restaurantes: Le Jardin (fine dining, ⭐4.2), Blaise (francês casual), Taraz (chef Felipe Bronze), Rabo di Galo (drinques autorais) e Bela Vista Bar. Ótimo para ocasião especial — reserve com antecedência.",
+    eat_terraco_p:"Buffet/brunch em ambiente de jardim interno — bom para grupos.",
+    eat_tuy_p:"Espanhola/mediterrânea, pratos generosos — cordeiro 72h e polvo são destaque.",
+    eat_altruista_p:"Italiano premiadíssimo — massas e risotos elogiadíssimos, carta de vinhos enorme.",
+    eat_bistrotparis_p:"Francês clássico premiado — beef wellington, confit de pato, mille-feuille.",
+    eat_miro_p:"Ambiente elegante e moderno — ótimo para jantar romântico ou com amigos.",
+    eat_praca_t:"Praça de alimentação (2º piso)", eat_praca_p:"Mr. Cheney (panquecas/cookies ⭐4.8), Coração Mineiro (buffet mineiro ⭐4.0), Divino Fogão (self-service ⭐3.8), Chiquinho Sorvetes e outros.",
+    eat_piso3_t:"Piso de restaurantes (3º piso)", eat_piso3_p:"Outback Steakhouse (⭐4.4), Temakeria e Cia (temaki à vontade, ⭐4.1), Pateo da Luz (brasileiro, música ao vivo, ⭐4.2), North Bar e Grill (⭐4.3), FREEDOM Kitchen & Bar (⭐4.4).",
+    eat_footnote:"Avaliações e horários podem mudar — confira antes de ir.",
+    faq_q1:"✈️ Qual aeroporto é mais perto?", faq_a1:"Congonhas (CGH) é o mais próximo, cerca de 20-30 min de carro. Guarulhos (GRU), o aeroporto internacional, fica mais longe — em torno de 45-60 min, dependendo do trânsito.",
+    faq_q2:"💳 Cartão ou dinheiro?", faq_a2:"Em São Paulo praticamente tudo aceita cartão e Pix, do mercado ao taxi. Não é necessário andar com muito dinheiro em espécie.",
+    faq_q3:"💊 Farmácia aberta a qualquer hora?", faq_a3:"Ultrafarma 24h — Av. Paulista, 329, Bela Vista, a cerca de 1km do apê.",
+    faq_q4:"🕐 Dá para sair mais tarde?", faq_a4:'Sim, por R$50 mediante disponibilidade. É só pedir pelo botão "Pedir hora adicional" na seção "Bom saber".',
+    faq_q5:"🚬 Posso fumar?", faq_a5:"Só na área externa (varanda), com a porta de vidro fechada.",
+    faq_q6:"👥 Posso receber visitas?", faq_a6:"Não — visitas externas não são permitidas, para a segurança de todos no condomínio.",
+    faq_q7:"🌦️ Como é o clima em São Paulo?", faq_a7:"Pode chover a qualquer hora, mesmo com sol — vale sempre ter um guarda-chuva por perto. As temperaturas variam bastante ao longo do dia.",
+    weather_btn:"Ver previsão de hoje →", weather_chip:"Ver temperatura de hoje e dos próximos dias",
+    conv_t:"💱 Conversor de moeda", conv_p:"Uma estimativa rápida em reais — confira a cotação atual antes de trocar valores grandes.",
+    conv_note:"Cotação aproximada de 18/09/2026 (Banco Central). As taxas mudam diariamente.",
+    faq_q8:"💵 Preciso dar gorjeta?", faq_a8:"Não é obrigatória no Brasil, mas 10% é comum em restaurantes (às vezes já incluído na conta).",
+    faq_q9:"📶 O Wi-Fi caiu, o que eu faço?", faq_a9:"Tente reiniciar o roteador (desligar e ligar de novo). Se continuar sem funcionar, chame a Kamila no WhatsApp.",
+    faq_q10:"❄️ O ar-condicionado não liga", faq_a10:"Confira se o controle remoto tem pilha e se está apontado direto para o aparelho. Se não resolver, chame a Kamila.",
+    faq_q11:"🚿 O chuveiro está sem água quente", faq_a11:"Verifique se o registro do chuveiro está na posição de aquecimento (geralmente inverno/verão). Persistindo, chame a Kamila.",
+    faq_q12:"🔒 Alguma dica de segurança?", faq_a12:"Como em qualquer grande cidade: evite usar o celular muito exposto na rua, prefira Uber/99 à noite, e fique tranquilo — a região é bem movimentada e monitorada.",
+    apps_t:"📱 Apps úteis", apps_p:"Uber e 99 são os apps de transporte mais usados. Para comida, iFood e Rappi entregam bem na região. Se chegar sem internet, tem loja de operadora (chip/eSIM) dentro do Shopping Frei Caneca.",
+    toc_roteiro:"Roteiro sugerido", roteiro_sub:"Diga quantos dias você vai ficar e eu ajusto a sugestão.",
+    roteiro_sub2:"Um dia por tela — deslize para o lado para ver mais.", roteiro_scroll_hint:"← deslize para o lado para ver mais dias →",
+    roteiro_ask_t:"📅 Quantos dias você vai ficar?", roteiro_ask_btn:"Montar",
+    day1_tag:"DIA 1", day1_t:"MASP, Paulista e Oscar Freire", day1_p:"Manhã: MASP e Parque Trianon (10 min a pé). Almoço na região da Paulista. Tarde: Rua Oscar Freire ou Beco do Batman.",
+    day2_tag:"DIA 2", day2_t:"Mercadão e Centro Histórico", day2_p:"Manhã: Mercado Municipal (Mercadão). Tarde: Centro Histórico, com a Catedral da Sé e o Pátio do Colégio.",
+    day3_tag:"DIA 3", day3_t:"Ibirapuera e Liberdade", day3_p:"Manhã: Parque Ibirapuera. Almoço na Liberdade — se for domingo, ainda pega a feira de artesanato.",
+    day4_tag:"DIA 4+", day4_t:"Vila Madalena e além", day4_p:"Com mais tempo: Vila Madalena com calma, a Pinacoteca, e até uma escapada para a Zona Sul da cidade.",
+    roteiro_neg_tag:"A NEGÓCIOS", roteiro_neg_t:"Aqui a negócios / evento", roteiro_neg_p:"Frei Caneca é literalmente em frente. Para jantar depois do trabalho, Famiglia Mancini ou os restaurantes da Paulista ficam a poucos minutos.",
+    toc_guestbook:"Mensagens de hóspedes", guestbook_sub:"Um cantinho pra quem já ficou aqui deixar uma palavra pra quem vier depois.",
+    guestbook_placeholder:"Escreva sua mensagem...", guestbook_btn:"Enviar mensagem", guestbook_hint:"Sua mensagem vai direto para a Kamila — ela adora ler e às vezes compartilha aqui com os próximos hóspedes.",
+    toc_idioma:"Frases em português", idioma_sub:"Frases úteis para o dia a dia por aqui.",
+    fr_col_pt:"Português", fr_col_mean:"Significado",
+    fr_1:"Olá / Oi", fr_2:"Bom dia / Boa tarde / Boa noite", fr_3:"Por favor", fr_4:"Obrigado(a)", fr_5:"Com licença", fr_6:"Quanto custa?", fr_7:"Onde fica o banheiro?", fr_8:"Você fala inglês?", fr_9:"Não falo português", fr_10:"Preciso de um médico", fr_11:"Socorro! / Ajuda!", fr_12:"Chama a polícia",
+    trad_t:"🔤 Tradutor rápido", trad_p:"Digite algo abaixo e abra a tradução direto no Google Tradutor.", trad_placeholder:"Escreva aqui...", trad_btn:"Traduzir para português",
+    voz_t:"🎙️ Tradutor de voz", voz_p:'Não dá pra colocar tradução de voz ao vivo direto aqui no guia. Mas o app do Google Tradutor tem um modo "conversa" ótimo para falar com a Kamila ou com qualquer pessoa em tempo real — vale baixar antes da viagem.', voz_btn:"Buscar o app Google Tradutor",
+    toc_passeios:"Passeios & aluguel de carro", toc_passeios_short:"Passeios & carro", toc_passeios_badge:"5% OFF", passeios_sub:"Reserve com antecedência e sem fila, direto com nossos parceiros.",
+    passeios_gyg_t:"🎟️ Todos os passeios em SP", passeios_gyg_p:"Tours, museus e experiências com reserva antecipada — evite fila e garanta seu horário.", passeios_gyg_btn:"Ver todos os passeios →",
+    passeios_city_t:"🚶 City tour a pé", passeios_city_p:"Conheça o Centro Histórico, a Paulista e os principais pontos com um guia local.", passeios_city_btn:"Ver city tours →",
+    passeios_food_t:"🍝 Tour gastronômico", passeios_food_p:"Prove o melhor da comida paulistana com um guia especializado, incluindo o Mercadão.", passeios_food_btn:"Ver tours gastronômicos →",
+    passeios_masp_t:"🖼️ Ingresso MASP sem fila", passeios_masp_p:"Garanta seu horário no museu que fica a poucos passos do apê.", passeios_masp_btn:"Ver ingressos MASP →",
+    passeios_car_t:"🚗 Aluguel de carro", passeios_car_badge:"5% OFF", passeios_car_p:"Compare as melhores tarifas para o seu período de estadia. Use o cupom <b>DOMFERIAS</b> e ganhe 5% de desconto — vale só reservando pelo botão abaixo.", passeios_car_btn:"Comparar tarifas com 5% OFF →",
+    pdf_btn:"Salvar guia em PDF",
+    notice_label:"📌 Avisos importantes", notice_default:"Nenhum aviso especial no momento — aproveite a estadia!",
+    checklist_t:"✅ Checklist antes de sair", cl_1:"Cafeteira / fogão desligados", cl_2:"Ar-condicionado desligado", cl_3:"Luzes apagadas", cl_4:"Lixo recolhido", cl_5:"Nada esquecido na tomada / carregador", cl_6:"Porta trancada na saída",
+    consul_t:"🌎 Consulados em São Paulo", consul_us:"Estados Unidos", consul_fr:"França", consul_es:"Espanha", consul_cn:"China",
+    msg_checkin:"Cheguei no apartamento, check-in feito! 🏡", msg_checkout:"Já saí do apartamento, deixei tudo certinho! 👋",
+    msg_help:"Olá Kamila! Sou hóspede do apto na Penaforte Mendes e preciso de ajuda.", msg_extrahour:"Olá Kamila! Gostaria de verificar disponibilidade para hora adicional (R$50).",
+    pass_label:"Acesso rápido", pass_addr:"Endereço", pass_wifipass:"Senha Wi-Fi", pass_code:"Código da porta do apê", pass_hours:"Check-in / Check-out",
+    pass_note:"Precisa de algo durante a estadia? Kamila responde rápido.", pass_btn:"Falar com Kamila no WhatsApp",
+    checkin_sub:"A partir das 15h.",
+    checkin_1:"<b>Cadastre seu rosto antes de chegar</b>A entrada do condomínio é por reconhecimento facial. Kamila envia um link para você cadastrar sua foto antes da viagem — sem isso, a catraca não libera.",
+    checkin_2:"<b>Chegue ao endereço e entre pela facial</b>Rua Dr. Penaforte Mendes, 160. O rosto cadastrado libera o acesso na portaria, sem precisar de chave ou crachá.",
+    checkin_3:"<b>Suba ao 6º andar — Apartamento 602D</b>O apartamento fica logo na chegada do andar.",
+    checkin_4:"<b>Digite 3110 na porta do apartamento</b>Esse código é só da fechadura do seu apê — a entrada do prédio já foi liberada pela facial.",
+    checkin_btn:"Cheguei! Avisar Kamila", qa_title:"Você acabou de chegar ou já está de saída?", qa_checkin_short:"Cheguei!", qa_checkin_sub:"Avisar check-in", qa_checkout_short:"Já saí!", qa_checkout_sub:"Avisar check-out",
+    apt_sub:"42m², varanda, 6º andar.",
+    apt_am1:"🛏️ Cama de casal 1,38×1,88m", apt_am2:"🛋️ Sofá na sala — vira cama para reservas de 3+ hóspedes", apt_am3:"❄️ Ar-condicionado", apt_am4:"📺 Smart TV", apt_am5:"🍳 Cozinha completa", apt_am6:"🧺 Roupa de cama e banho",
+    apt_light_title:"🌤️ Luz natural no sofá-cama", apt_light_p:"Essa informação é sobre a área externa, onde fica o sofá-cama do 3º e 4º hóspede. Mesmo com a cortina fechada, a cobertura de vidro deixa entrar luz clara ao amanhecer — por isso, disponibilizamos máscara de dormir, caso precise.",
+    cond_sub:"Infraestrutura completa, sem precisar sair do prédio.",
+    cond_am1:"<b>6º andar</b>🏊 Piscina", cond_am2:"<b>6º andar</b>🏋️ Academia", cond_am3:"<b>6º andar</b>🧖 Sauna", cond_am4:"<b>Térreo</b>🛒 Mini mercado", cond_am5:"<b>Térreo</b>💻 Coworking", cond_am6:"<b>Térreo</b>🧺 Lavanderia (R$12 lavar + R$12 secar)", cond_am7:"<b>1º andar</b>🗑️ Lixeira (elevador de serviço)", cond_am8:"<b>Portaria</b>👮 24h · facial + interfone",
+    cond_hours_t:"🕒 Horário da piscina e academia", cond_hours_p:"Academia: das 6h à 0h, todos os dias. Piscinas: das 8h às 22h, diariamente — exceto no primeiro dia útil da semana, quando ficam fechadas para limpeza e tratamento da água.",
+    cond_pool_t:"🏊 Regras da piscina", cond_pool_p:"Não é permitido comer ou beber na área da piscina. Também não é permitido circular de traje de banho fora da área da piscina.",
+    reg_silence_t:"🤫 Lei do silêncio", reg_silence_p:"Para manter a harmonia com os vizinhos, o condomínio exige silêncio das 22h às 7h. Em caso de descumprimento e multa aplicada pelo condomínio, o valor equivalente será repassado via Airbnb.",
+    reg_visit_t:"🚫 Visitas externas", reg_visit_p:"Não são permitidas, para garantir a segurança e privacidade de todos no condomínio.",
+    reg_smoke_t:"🚬 Fumar", reg_smoke_p:"Permitido somente na área externa (varanda) do apartamento, com a porta de vidro fechada.",
+    reg_guest_t:"👥 3º e 4º hóspede", reg_guest_p:"Para reservas de até 2 hóspedes, preparamos a cama de casal. Para usar o sofá-cama (3º e 4º hóspede), é necessário reservar para 3 pessoas — isso libera o item automaticamente na reserva.",
+    reg_hour_t:"⏱️ Hora adicional", reg_hour_p:"É possível estender a saída por R$50,00, sujeito a disponibilidade. Toque no botão abaixo para verificar com a Kamila.", reg_hour_btn:"Pedir hora adicional",
+    reg_clean_t:"✨ Sem taxa de limpeza", reg_clean_p:"Confiamos no cuidado dos hóspedes com o espaço. Se o apartamento for devolvido em condições inadequadas, pode ser aplicada uma taxa extra de R$250.",
+    reg_kit_t:"🧴 Kits extras", reg_kit_p:"Toalhas e roupa de cama adicionais disponíveis por R$50,00 por pessoa, mediante solicitação.",
+    reg_linen_t:"🧺 Cuidado com o enxoval", reg_linen_p:"Pedimos cuidado ao usar maquiagem, protetor solar ou produtos que mancham. Em caso de mancha irreversível ou dano, o valor de reposição é:",
+    reg_table_item:"Item", reg_table_price:"Reposição", reg_item1:"Lençol", reg_item2:"Toalha de banho", reg_item3:"Toalha de rosto",
+    checkout_sub:"Até às 11h.",
+    checkout_1:"<b>Tire o lixo</b>Leve até a lixeira do 1º andar, saindo pelo elevador de serviço.",
+    checkout_2:"<b>Nada de papel higiênico no vaso</b>Jogue sempre no lixo — em caso de entupimento, é cobrada uma taxa de R$300,00.",
+    checkout_3:"<b>Desligue tudo</b>Ar-condicionado, luzes, e tranque a porta com a fechadura.",
+    checkout_4:"<b>Pronto!</b>Por gentileza, avise que já saiu tocando no botão abaixo. Qualquer coisa, chame no WhatsApp.",
+    checkout_btn:"Já saí! Avisar Kamila",
+    regiao_sub:"No coração da Bela Vista, a 1km da Av. Paulista.", dm_title:"Mapa de proximidade", dm_caption:"Posição e distância reais em relação ao apartamento — só não é o mapa de ruas do Google.", dm_here:"Você está aqui", dm_cluster:"Frei Caneca e metrô — até 1km", regiao_open_map:"Abrir localização no Maps", regiao_map_btn:"Ver mapa completo com todos os pontos", regiao_hint:'Ou toque em "Ver rota" em cada card abaixo para ir direto a um lugar específico.', qa_hint:"Um toque avisa a Kamila, inclusive no WhatsApp.",
+    c_frei_t:"Shopping e Centro de Convenções Frei Caneca", c_frei_d:"em frente", c_frei_p:"Ideal para quem veio para um congresso — é só atravessar a rua. Também tem cinema, restaurantes e lojas.",
+    cat_hosp:"Hospitais próximos", c_sirio_t:"Hospital Sírio-Libanês", c_9dj_t:"Hospital 9 de Julho", c_sc_t:"Hospital Santa Catarina", c_oc_t:"Hospital Alemão Oswaldo Cruz", c_sam_t:"Hospital Samaritano (Higienópolis)",
+    c_pm_t:"Pro Matre Paulista", c_pm_p:"Se você veio para tratamento ou recuperação, farmácias e o mini mercado do prédio ficam bem à mão, e o apartamento é silencioso para descansar.",
+    cat_sp:"Para conhecer São Paulo",
+    c_masp_t:"MASP", c_masp_p:"Um dos museus mais importantes da América Latina.",
+    c_tri_t:"Parque Trianon", c_tri_addr:"Av. Paulista, s/n — bem em frente ao MASP", c_tri_p:"Um pedacinho de Mata Atlântica no meio da avenida, ótimo para uma pausa.",
+    c_ibi_t:"Parque Ibirapuera", c_ibi_p:"O parque mais conhecido da cidade, com museus e ciclovia.",
+    c_beco_t:"Beco do Batman", c_beco_p:"Galeria de arte urbana a céu aberto, num dos bairros mais boêmios de SP.",
+    c_osc_t:"Rua Oscar Freire", c_osc_p:"A rua mais chique de São Paulo — grifes, cafés e vitrines bonitas de se ver.",
+    c_lib_t:"Liberdade", c_lib_addr:"Bairro japonês — Liberdade", c_lib_p:"Maior colônia japonesa fora do Japão: comidinhas, feira de artesanato aos fins de semana e lojinhas orientais.",
+    c_se_t:"Sé & Centro Histórico", c_se_addr:"Catedral da Sé, Pátio do Colégio, Pinacoteca", c_se_p:"O berço de São Paulo — arquitetura histórica e museus a céu aberto.",
+    c_merc_t:"Mercado Municipal (Mercadão)",
+    route:"Ver rota →",
+    metro_sub:"As estações mais próximas, todas a poucos minutos a pé.",
+    m_cons_t:"Consolação", m_cons_p:"Outra opção próxima, na linha Verde.",
+    m_hig_t:"Higienópolis-Mackenzie", m_hig_p:"A estação mais próxima do apê. Conecta direto com a linha Verde na Paulista.",
+    m_tri_t:"Trianon-MASP", m_tri_p:"Desce direto na Av. Paulista, em frente ao museu.",
+    m_bri_t:"Brigadeiro", line_verde:"Linha Verde", line_amarela:"Linha Amarela",
+    metro_closing:"Corredores de ônibus na Consolação, 9 de Julho, 23 de Maio e Paulista levam a praticamente qualquer parte da cidade. Uber e 99 funcionam bem por toda São Paulo.",
+    tel_kamila:" · WhatsApp", tel_portaria_label:"Portaria do prédio", tel_portaria:" · pelo interfone, ramal do apê",
+    tel_policia_label:"Polícia", tel_policia:" · emergência", tel_samu_label:"SAMU", tel_samu:" · emergência médica", tel_bomb_label:"Bombeiros", tel_bomb:" · emergência",
+    footer_script:"Espero que sua estadia seja tranquila", footer_p:"e que São Paulo te receba tão bem quanto eu tentei receber você. Qualquer coisa, é só chamar.", footer_btn:"Chamar a Kamila no WhatsApp",
+    review_ask_p:"🌟 Se puder, deixe uma nota 5 no Airbnb — nos ajuda muito! Obrigada 💛", review_ask_btn:"Ver anúncio no Airbnb",
+    domferias_p:"✈️ Já sabe pra onde vai depois de São Paulo? A Dom Férias monta seu roteiro de viagem prontinho, a partir de R$19,90.", domferias_btn:"Conhecer a Dom Férias"
+  },
+  en: {
+    lang_switch:"Language", search_placeholder:"Search the guide...", search_none:"Nothing found.",
+    hero_welcome:"Welcome", hero_title:"to your next stay",
+    hero_p:"This is your stay guide — everything you need to arrive, feel at home, and enjoy São Paulo, all in one place.",
+    hero_sign:"with love, Kamila", hero_sub:"SUPERHOST · 4 YEARS HOSTING · 5.0 ★",
+    toc_title:"In this guide", toc_1:"Arrival & check-in", toc_2:"The apartment", toc_3:"The building", toc_4:"Good to know", toc_5:"Departure & checkout", toc_6:"Around here & map", toc_7:"Eating nearby", toc_8:"Metro & getting around", toc_9:"Useful phone numbers", toc_11:"Quick FAQ",
+    comer_sub:"A few everyday recommendations, a short walk from the apartment.",
+    c_donajulia_t:"Dona Julia Restaurante e Grill", c_donajulia_p:"Brazilian home cooking, self-service and à la carte — good for a no-fuss lunch.",
+    c_baoba_t:"Baobá Café", c_baoba_p:"House-roasted specialty coffee — great for breakfast or a break.",
+    c_giraffas_t:"Giraffas", c_giraffas_d:"across the street", c_giraffas_p:"Quick and practical, inside the mall right across the street — good when time is short.",
+    c_zena_t:"Zena Cucina", c_zena_p:"Italian, Michelin-recognized — a great pick for a special dinner.",
+    c_mancini_t:"Famiglia Mancini", c_mancini_p:"A São Paulo institution — a classic trattoria with an antipasti buffet, pasta and live music. Come early, it tends to have a line.",
+    c_mamma_t:"Cantina Mamma Celeste", c_mamma_p:"A neighborhood cantina in the heart of Bixiga, hearty homemade pasta — traditional and unpretentious.",
+    eat_cafe:"Breakfast", eat_almoco:"Lunch", eat_jantar:"Dinner", eat_jardins:"Jardins (~2km, worth an Uber)", eat_freicaneca:"At Shopping Frei Caneca (across the street)",
+    c_bellap_t:"Padaria Bella Paulista", c_bellap_p:"São Paulo's most iconic bakery, open 24h — bakery, butcher, sushi and restaurant all in one.",
+    eat_lykke_p:"Handmade filled cookies, cakes and coffee.",
+    eat_bellapaim_p:"Bakery + bar; full breakfast spread, turns into a pizzeria at night (8am–midnight).",
+    eat_boulevard_p:"Higienópolis' famous bakery — a huge display of savory pastries and sweets, fresh-pressed bread.",
+    eat_fabrique_p:"French-style bakery/brunch spot — croissants, eggs benedict.",
+    c_adriata_t:"Adriata Restaurante", c_adriata_p:"Brazilian/contemporary, generous portions — picanha and seafood. The closest option of all.",
+    eat_recanto_p:"Brazilian home cooking, buffet-by-weight style.",
+    eat_jardan_p:"Buffet-by-weight/à la carte, a Paulista Avenue classic.",
+    c_kome_t:"Kome (Bela Vista)", c_kome_p:"Trendy Japanese spot with a well-rated sushi rodízio — worth booking ahead.",
+    eat_bistroav_p:"French-contemporary — the lamb picanha with mushroom risotto is the favorite.",
+    eat_cantinaq_p:"A traditional, lively Italian cantina with live music.",
+    c_matarazzo_t:"Hotel Matarazzo (Rosewood)", c_matarazzo_p:"A complex with several restaurants: Le Jardin (fine dining, ⭐4.2), Blaise (casual French), Taraz (chef Felipe Bronze), Rabo di Galo (signature cocktails) and Bela Vista Bar. Great for a special occasion — book ahead.",
+    eat_terraco_p:"Buffet/brunch in an indoor garden setting — great for groups.",
+    eat_tuy_p:"Spanish/Mediterranean, generous portions (not small tapas) — the 72h lamb and octopus stand out.",
+    eat_altruista_p:"A highly-acclaimed Italian spot — praised pastas and risottos, a huge wine list.",
+    eat_bistrotparis_p:"An award-winning classic French bistro — beef wellington, duck confit, mille-feuille.",
+    eat_miro_p:"Elegant, modern setting — great for a romantic dinner or with friends.",
+    eat_praca_t:"Food court (2nd floor)", eat_praca_p:"Mr. Cheney (pancakes/cookies ⭐4.8), Coração Mineiro (buffet ⭐4.0), Divino Fogão (self-service ⭐3.8), Chiquinho Sorvetes and more.",
+    eat_piso3_t:"Restaurant floor (3rd floor)", eat_piso3_p:"Outback Steakhouse (⭐4.4), Temakeria e Cia (all-you-can-eat temaki, ⭐4.1), Pateo da Luz (Brazilian, live music, ⭐4.2), North Bar e Grill (⭐4.3), FREEDOM Kitchen & Bar (⭐4.4).",
+    eat_footnote:"Ratings and hours may change — double-check before heading out.",
+    faq_q1:"✈️ Which airport is closest?", faq_a1:"Congonhas (CGH) is the closest, about a 20-30 min drive. Guarulhos (GRU), the international airport, is farther — around 45-60 min depending on traffic.",
+    faq_q2:"💳 Card or cash?", faq_a2:"In São Paulo, cards and Pix are accepted almost everywhere, from grocery stores to taxis. You don't need to carry much cash.",
+    faq_q3:"💊 Pharmacy open any time?", faq_a3:"Ultrafarma 24h — Av. Paulista, 329, Bela Vista, about 1km from the apartment.",
+    faq_q4:"🕐 Can I leave later?", faq_a4:'Yes, for R$50 subject to availability. Just tap the "Ask for extra hour" button in the "Good to know" section.',
+    faq_q5:"🚬 Can I smoke?", faq_a5:"Only in the outdoor area (balcony), with the glass door closed.",
+    faq_q6:"👥 Can I have visitors?", faq_a6:"No — outside visitors aren't allowed, for everyone's safety in the building.",
+    faq_q7:"🌦️ What's the weather like in São Paulo?", faq_a7:"It can rain any time, even with the sun out — worth keeping an umbrella handy. Temperatures can vary a lot through the day.",
+    weather_btn:"See today's forecast →", weather_chip:"See today's and the coming days' temperature",
+    conv_t:"💱 Currency converter", conv_p:"A quick estimate in reais — check the current rate before exchanging large amounts.",
+    conv_note:"Approximate rate from 09/18/2026 (Central Bank of Brazil). Rates change daily.",
+    faq_q8:"💵 Do I need to tip?", faq_a8:"Not mandatory in Brazil, but 10% is common at restaurants (sometimes already included in the bill).",
+    faq_q9:"📶 The Wi-Fi went down, what do I do?", faq_a9:"Try restarting the router (unplug and plug back in). If it's still not working, message Kamila on WhatsApp.",
+    faq_q10:"❄️ The AC won't turn on", faq_a10:"Check that the remote has batteries and is pointed directly at the unit. If that doesn't fix it, message Kamila.",
+    faq_q11:"🚿 No hot water in the shower", faq_a11:"Check that the shower's heating switch is set to the hot position. If it persists, message Kamila.",
+    faq_q12:"🔒 Any safety tips?", faq_a12:"Like in any big city: avoid having your phone out in the open on the street, prefer Uber/99 at night, and relax — the area is busy and well-monitored.",
+    apps_t:"📱 Useful apps", apps_p:"Uber and 99 are the most-used ride apps. For food, iFood and Rappi deliver well to the area. If you arrive without internet, there's a phone carrier store inside Shopping Frei Caneca for a chip/eSIM.",
+    toc_roteiro:"Suggested itinerary", roteiro_sub:"Tell me how many days you're staying and I'll adjust the suggestion.",
+    roteiro_sub2:"One day per screen — swipe sideways to see more.", roteiro_scroll_hint:"← swipe sideways for more days →",
+    roteiro_ask_t:"📅 How many days are you staying?", roteiro_ask_btn:"Build it",
+    day1_tag:"DAY 1", day1_t:"MASP, Paulista & Oscar Freire", day1_p:"Morning: MASP and Trianon Park (10 min walk). Lunch near Paulista. Afternoon: Oscar Freire Street or Batman's Alley.",
+    day2_tag:"DAY 2", day2_t:"Mercadão & Historic Center", day2_p:"Morning: Municipal Market (Mercadão). Afternoon: Historic Center, with Sé Cathedral and Pátio do Colégio.",
+    day3_tag:"DAY 3", day3_t:"Ibirapuera & Liberdade", day3_p:"Morning: Ibirapuera Park. Lunch in Liberdade — if it's a Sunday, catch the crafts fair too.",
+    day4_tag:"DAY 4+", day4_t:"Vila Madalena & beyond", day4_p:"With more time: a relaxed visit to Vila Madalena, the Pinacoteca museum, and even a trip to the city's South Zone.",
+    roteiro_neg_tag:"BUSINESS TRIP", roteiro_neg_t:"Here for business / an event", roteiro_neg_p:"Frei Caneca is literally across the street. For dinner after work, Famiglia Mancini or the restaurants on Paulista are just minutes away.",
+    toc_guestbook:"Guest messages", guestbook_sub:"A little corner for past guests to leave a word for the next ones.",
+    guestbook_placeholder:"Write your message...", guestbook_btn:"Send message", guestbook_hint:"Your message goes straight to Kamila — she loves reading them and sometimes shares them here with future guests.",
+    toc_idioma:"Portuguese phrases", idioma_sub:"Useful everyday phrases for while you're here.",
+    fr_col_pt:"Portuguese", fr_col_mean:"Meaning",
+    fr_1:"Hello / Hi", fr_2:"Good morning / afternoon / evening", fr_3:"Please", fr_4:"Thank you", fr_5:"Excuse me", fr_6:"How much is it?", fr_7:"Where's the bathroom?", fr_8:"Do you speak English?", fr_9:"I don't speak Portuguese", fr_10:"I need a doctor", fr_11:"Help!", fr_12:"Call the police",
+    trad_t:"🔤 Quick translator", trad_p:"Type something below and open the translation straight in Google Translate.", trad_placeholder:"Type here...", trad_btn:"Translate to Portuguese",
+    voz_t:"🎙️ Voice translator", voz_p:"Live voice translation isn't something we can build reliably right into this guide. But the Google Translate app has a great \"conversation\" mode for talking with Kamila or anyone in real time — worth downloading before your trip.", voz_btn:"Search for the Google Translate app",
+    toc_passeios:"Tours & car rental", toc_passeios_short:"Tours & car", toc_passeios_badge:"5% OFF", passeios_sub:"Book ahead and skip the line, straight through our partners.",
+    passeios_gyg_t:"🎟️ All tours in São Paulo", passeios_gyg_p:"Tours, museums and experiences booked in advance — skip the line and lock in your time slot.", passeios_gyg_btn:"See all tours →",
+    passeios_city_t:"🚶 Walking city tour", passeios_city_p:"See the Historic Center, Paulista Avenue and the main sights with a local guide.", passeios_city_btn:"See city tours →",
+    passeios_food_t:"🍝 Food tour", passeios_food_p:"Taste the best of São Paulo's food scene with a specialized guide, including the Mercadão.", passeios_food_btn:"See food tours →",
+    passeios_masp_t:"🖼️ Skip-the-line MASP ticket", passeios_masp_p:"Lock in your time slot at the museum that's just steps from the apartment.", passeios_masp_btn:"See MASP tickets →",
+    passeios_car_t:"🚗 Car rental", passeios_car_badge:"5% OFF", passeios_car_p:"Compare the best rates for your stay. Use code <b>DOMFERIAS</b> for 5% off — only valid when booking through the button below.", passeios_car_btn:"Compare rates with 5% OFF →",
+    pdf_btn:"Save guide as PDF",
+    notice_label:"📌 Important notices", notice_default:"No special notices right now — enjoy your stay!",
+    checklist_t:"✅ Before-you-leave checklist", cl_1:"Coffee maker / stove off", cl_2:"AC turned off", cl_3:"Lights off", cl_4:"Trash taken out", cl_5:"Nothing left charging / plugged in", cl_6:"Door locked on the way out",
+    consul_t:"🌎 Consulates in São Paulo", consul_us:"United States", consul_fr:"France", consul_es:"Spain", consul_cn:"China",
+    msg_checkin:"I've arrived at the apartment, check-in done! 🏡", msg_checkout:"I've just left the apartment, left everything in order! 👋",
+    msg_help:"Hi Kamila! I'm a guest at the Penaforte Mendes apartment and need some help.", msg_extrahour:"Hi Kamila! I'd like to check availability for an extra hour (R$50).",
+    pass_label:"Quick access", pass_addr:"Address", pass_wifipass:"Wi-Fi password", pass_code:"Apartment door code", pass_hours:"Check-in / Check-out",
+    pass_note:"Need anything during your stay? Kamila replies fast.", pass_btn:"Message Kamila on WhatsApp",
+    checkin_sub:"From 3pm.",
+    checkin_1:"<b>Register your face before you arrive</b>Building access is by facial recognition. Kamila sends you a link to register your photo before your trip — without it, the turnstile won't open.",
+    checkin_2:"<b>Arrive at the address and enter via facial recognition</b>Rua Dr. Penaforte Mendes, 160. Your registered face unlocks access at the front desk, no key or badge needed.",
+    checkin_3:"<b>Go up to the 6th floor — Apartment 602D</b>The apartment is right as you arrive on the floor.",
+    checkin_4:"<b>Enter 3110 at the apartment door</b>This code is only for your apartment's lock — building entry was already unlocked by facial recognition.",
+    checkin_btn:"I've arrived! Notify Kamila", qa_title:"Have you just arrived, or are you heading out?", qa_checkin_short:"I'm here!", qa_checkin_sub:"Notify check-in", qa_checkout_short:"I've left!", qa_checkout_sub:"Notify check-out",
+    apt_sub:"42m², balcony, 6th floor.",
+    apt_am1:"🛏️ Queen bed, 1.38×1.88m", apt_am2:"🛋️ Sofa in the living room — converts to a bed for 3+ guest bookings", apt_am3:"❄️ Air conditioning", apt_am4:"📺 Smart TV", apt_am5:"🍳 Fully equipped kitchen", apt_am6:"🧺 Bed and bath linens",
+    apt_light_title:"🌤️ Natural light on the sofa bed", apt_light_p:"This is about the outdoor-facing area, where the sofa bed for the 3rd and 4th guest is. Even with the curtain closed, the glass roof lets in bright light at dawn — so we provide a sleep mask if you'd like one.",
+    cond_sub:"Full amenities, no need to leave the building.",
+    cond_am1:"<b>6th floor</b>🏊 Pool", cond_am2:"<b>6th floor</b>🏋️ Gym", cond_am3:"<b>6th floor</b>🧖 Sauna", cond_am4:"<b>Ground floor</b>🛒 Mini market", cond_am5:"<b>Ground floor</b>💻 Coworking", cond_am6:"<b>Ground floor</b>🧺 Laundry (R$12 wash + R$12 dry)", cond_am7:"<b>1st floor</b>🗑️ Trash room (service elevator)", cond_am8:"<b>Front desk</b>👮 24h · facial recognition + intercom",
+    cond_hours_t:"🕒 Pool and gym hours", cond_hours_p:"Gym: 6am to midnight, every day. Pools: 8am to 10pm daily — except on the first business day of the week, when they're closed for cleaning and water treatment.",
+    cond_pool_t:"🏊 Pool rules", cond_pool_p:"No eating or drinking in the pool area. Also not allowed to walk around outside the pool area in swimwear.",
+    reg_silence_t:"🤫 Quiet hours", reg_silence_p:"To keep the peace with neighbors, the building requires quiet hours from 10pm to 7am. If this results in a fine from the building, the equivalent amount will be charged through Airbnb.",
+    reg_visit_t:"🚫 Outside visitors", reg_visit_p:"Not allowed, to keep everyone in the building safe and their privacy protected.",
+    reg_smoke_t:"🚬 Smoking", reg_smoke_p:"Allowed only on the apartment's outdoor area (balcony), with the glass door closed.",
+    reg_guest_t:"👥 3rd & 4th guest", reg_guest_p:"For bookings of up to 2 guests, we set up the double bed. To use the sofa bed (3rd and 4th guest), you need to book for 3 guests — that automatically unlocks it on the reservation.",
+    reg_hour_t:"⏱️ Extra hour", reg_hour_p:"You can extend checkout for R$50, subject to availability. Tap the button below to check with Kamila.", reg_hour_btn:"Ask for extra hour",
+    reg_clean_t:"✨ No cleaning fee", reg_clean_p:"We trust guests to take care of the space. If the apartment is left in poor condition, an extra R$250 fee may apply.",
+    reg_kit_t:"🧴 Extra kits", reg_kit_p:"Extra towels and bed linens available for R$50 per person, on request.",
+    reg_linen_t:"🧺 Taking care of the linens", reg_linen_p:"Please be careful with makeup, sunscreen, or staining products. In case of an irreversible stain or damage, the replacement value is:",
+    reg_table_item:"Item", reg_table_price:"Replacement", reg_item1:"Sheet", reg_item2:"Bath towel", reg_item3:"Hand towel",
+    checkout_sub:"Until 11am.",
+    checkout_1:"<b>Take out the trash</b>Bring it to the trash room on the 1st floor, via the service elevator.",
+    checkout_2:"<b>No toilet paper in the toilet</b>Always throw it in the trash — a R$300 fee applies if it clogs the plumbing.",
+    checkout_3:"<b>Turn everything off</b>AC, lights, and lock the door.",
+    checkout_4:"<b>All done!</b>Please let us know you've left by tapping the button below. Anything at all, message us on WhatsApp.",
+    checkout_btn:"I've left! Notify Kamila",
+    regiao_sub:"In the heart of Bela Vista, 1km from Av. Paulista.", dm_title:"Proximity map", dm_caption:"Real position and distance relative to the apartment — just not a Google street map.", dm_here:"You are here", dm_cluster:"Frei Caneca and metro — under 1km", regiao_open_map:"Open location in Maps", regiao_map_btn:"See full map with all points", regiao_hint:'Or tap "Get directions" on any card below to go straight to a specific place.', qa_hint:"One tap notifies Kamila, including on WhatsApp.",
+    c_frei_t:"Frei Caneca Mall & Convention Center", c_frei_d:"across the street", c_frei_p:"Perfect if you're here for a conference — just cross the street. Also has a cinema, restaurants and shops.",
+    cat_hosp:"Nearby hospitals", c_sirio_t:"Hospital Sírio-Libanês", c_9dj_t:"Hospital 9 de Julho", c_sc_t:"Hospital Santa Catarina", c_oc_t:"Hospital Alemão Oswaldo Cruz", c_sam_t:"Hospital Samaritano (Higienópolis)",
+    c_pm_t:"Pro Matre Paulista", c_pm_p:"If you're here for treatment or recovery, pharmacies and the building's mini market are close by, and the apartment is quiet for resting.",
+    cat_sp:"Exploring São Paulo",
+    c_masp_t:"MASP", c_masp_p:"One of Latin America's most important art museums.",
+    c_tri_t:"Trianon Park", c_tri_addr:"Av. Paulista, s/n — right across from MASP", c_tri_p:"A small patch of Atlantic Forest right on the avenue, great for a break.",
+    c_ibi_t:"Ibirapuera Park", c_ibi_p:"The city's best-known park, with museums and bike paths.",
+    c_beco_t:"Batman's Alley", c_beco_p:"An open-air street art gallery in one of SP's most bohemian neighborhoods.",
+    c_osc_t:"Oscar Freire Street", c_osc_p:"São Paulo's most fashionable street — designer shops, cafés, and beautiful window displays.",
+    c_lib_t:"Liberdade", c_lib_addr:"Japanese neighborhood — Liberdade", c_lib_p:"The largest Japanese community outside Japan: street food, a weekend crafts fair, and Asian shops.",
+    c_se_t:"Sé & Historic Center", c_se_addr:"Sé Cathedral, Pátio do Colégio, Pinacoteca museum", c_se_p:"São Paulo's birthplace — historic architecture and open-air museums.",
+    c_merc_t:"Municipal Market (Mercadão)",
+    route:"Get directions →",
+    metro_sub:"The closest stations, all a short walk away.",
+    m_cons_t:"Consolação", m_cons_p:"Another nearby option, on the Green Line.",
+    m_hig_t:"Higienópolis-Mackenzie", m_hig_p:"The closest station to the apartment. Connects directly to the Green Line at Paulista.",
+    m_tri_t:"Trianon-MASP", m_tri_p:"Gets off right on Av. Paulista, across from the museum.",
+    m_bri_t:"Brigadeiro", line_verde:"Green Line", line_amarela:"Yellow Line",
+    metro_closing:"Bus lanes on Consolação, 9 de Julho, 23 de Maio and Paulista reach nearly anywhere in the city. Uber and 99 work well throughout São Paulo.",
+    tel_kamila:" · WhatsApp", tel_portaria_label:"Building front desk", tel_portaria:" · via intercom, apartment extension",
+    tel_policia_label:"Police", tel_policia:" · emergency", tel_samu_label:"SAMU", tel_samu:" · medical emergency", tel_bomb_label:"Fire department", tel_bomb:" · emergency",
+    footer_script:"I hope your stay is a peaceful one", footer_p:"and that São Paulo welcomes you as warmly as I tried to. Anything at all, just reach out.", footer_btn:"Message Kamila on WhatsApp",
+    review_ask_p:"🌟 If you enjoyed your stay, a 5-star review on Airbnb means the world to us! Thank you 💛", review_ask_btn:"View listing on Airbnb"
+  },
+  es: {
+    lang_switch:"Idioma", search_placeholder:"Buscar en la guía...", search_none:"No se encontró nada.",
+    hero_welcome:"Bienvenido(a)", hero_title:"a tu próxima estadía",
+    hero_p:"Esta es tu guía de estadía — todo lo que necesitas para llegar, sentirte como en casa y disfrutar São Paulo, en un solo lugar.",
+    hero_sign:"con cariño, Kamila", hero_sub:"SUPERHOST · 4 AÑOS RECIBIENDO HUÉSPEDES · 5,0 ★",
+    toc_title:"En esta guía", toc_1:"Llegada y check-in", toc_2:"El apartamento", toc_3:"El edificio", toc_4:"Bueno saber", toc_5:"Salida y checkout", toc_6:"Alrededores y mapa", toc_7:"Comer cerca", toc_8:"Metro y movilidad", toc_9:"Teléfonos útiles", toc_11:"FAQ rápido",
+    comer_sub:"Algunas recomendaciones para el día a día, a pocos minutos del apartamento.",
+    c_donajulia_t:"Dona Julia Restaurante e Grill", c_donajulia_p:"Comida casera brasileña, self-service y a la carta — ideal para un almuerzo sin complicaciones.",
+    c_baoba_t:"Baobá Café", c_baoba_p:"Café de especialidad de producción propia — genial para el desayuno o una pausa.",
+    c_giraffas_t:"Giraffas", c_giraffas_d:"enfrente", c_giraffas_p:"Práctico y rápido, dentro del shopping justo enfrente del edificio — bueno cuando el tiempo apremia.",
+    c_zena_t:"Zena Cucina", c_zena_p:"Italiana, reconocida por la Guía Michelin — excelente opción para una cena especial.",
+    c_mancini_t:"Famiglia Mancini", c_mancini_p:"Una institución de São Paulo — trattoria clásica con buffet de antipasti, pastas y música en vivo. Llega temprano, suele tener fila.",
+    c_mamma_t:"Cantina Mamma Celeste", c_mamma_p:"Cantina de barrio en el corazón del Bixiga, pastas caseras abundantes — bien tradicional, sin pretensiones.",
+    eat_cafe:"Desayuno", eat_almoco:"Almuerzo", eat_jantar:"Cena", eat_jardins:"Jardins (~2km, vale un Uber)", eat_freicaneca:"En el Shopping Frei Caneca (enfrente)",
+    c_bellap_t:"Padaria Bella Paulista", c_bellap_p:"La panadería más icónica de SP, abierta 24h — panadería, carnicería, sushi y restaurante juntos.",
+    eat_lykke_p:"Cookies artesanales rellenos, tartas y café.",
+    eat_bellapaim_p:"Panadería + bar; desayuno completo, se convierte en pizzería por la noche (8h–medianoche).",
+    eat_boulevard_p:"La panadería famosa de Higienópolis — vitrina enorme de salados y dulces, pan recién hecho.",
+    eat_fabrique_p:"Panadería/brunch estilo francés — croissants, huevos benedictinos.",
+    c_adriata_t:"Adriata Restaurante", c_adriata_p:"Brasileña/contemporánea, porciones generosas — picanha y mariscos. La opción más cercana de todas.",
+    eat_recanto_p:"Comida casera brasileña, estilo plato del día / self-service.",
+    eat_jardan_p:"Buffet por peso/a la carta, tradicional en la Paulista.",
+    c_kome_t:"Kome (Bela Vista)", c_kome_p:"Japonés popular, rodízio de sushi bien evaluado — considera reservar.",
+    eat_bistroav_p:"Franco-contemporáneo — la picanha de cordero con risotto de funghi es la favorita.",
+    eat_cantinaq_p:"Cantina italiana tradicional, animada, con música en vivo.",
+    c_matarazzo_t:"Hotel Matarazzo (Rosewood)", c_matarazzo_p:"Complejo con varios restaurantes: Le Jardin (fine dining, ⭐4.2), Blaise (francés casual), Taraz (chef Felipe Bronze), Rabo di Galo (coctelería de autor) y Bela Vista Bar. Genial para una ocasión especial — reserva con anticipación.",
+    eat_terraco_p:"Buffet/brunch en un jardín interno — bueno para grupos.",
+    eat_tuy_p:"Española/mediterránea, porciones generosas — el cordero 72h y el pulpo son destacados.",
+    eat_altruista_p:"Italiano muy premiado — pastas y risottos muy elogiados, carta de vinos enorme.",
+    eat_bistrotparis_p:"Francés clásico premiado — beef wellington, confit de pato, mille-feuille.",
+    eat_miro_p:"Ambiente elegante y moderno — genial para una cena romántica o con amigos.",
+    eat_praca_t:"Patio de comidas (2º piso)", eat_praca_p:"Mr. Cheney (panqueques/cookies ⭐4.8), Coração Mineiro (buffet ⭐4.0), Divino Fogão (self-service ⭐3.8), Chiquinho Sorvetes y más.",
+    eat_piso3_t:"Piso de restaurantes (3er piso)", eat_piso3_p:"Outback Steakhouse (⭐4.4), Temakeria e Cia (temaki libre, ⭐4.1), Pateo da Luz (brasileño, música en vivo, ⭐4.2), North Bar e Grill (⭐4.3), FREEDOM Kitchen & Bar (⭐4.4).",
+    eat_footnote:"Las calificaciones y horarios pueden cambiar — verifica antes de ir.",
+    faq_q1:"✈️ ¿Qué aeropuerto está más cerca?", faq_a1:"Congonhas (CGH) es el más cercano, unos 20-30 min en auto. Guarulhos (GRU), el aeropuerto internacional, está más lejos — entre 45 y 60 min según el tránsito.",
+    faq_q2:"💳 ¿Tarjeta o efectivo?", faq_a2:"En São Paulo casi todo acepta tarjeta y Pix, desde el mercado hasta el taxi. No es necesario llevar mucho efectivo.",
+    faq_q3:"💊 ¿Farmacia abierta a cualquier hora?", faq_a3:"Ultrafarma 24h — Av. Paulista, 329, Bela Vista, a cerca de 1km del apartamento.",
+    faq_q4:"🕐 ¿Puedo salir más tarde?", faq_a4:'Sí, por R$50 sujeto a disponibilidad. Solo toca el botón "Pedir hora adicional" en la sección "Bueno saber".',
+    faq_q5:"🚬 ¿Puedo fumar?", faq_a5:"Solo en el área externa (balcón), con la puerta de vidrio cerrada.",
+    faq_q6:"👥 ¿Puedo recibir visitas?", faq_a6:"No — no se permiten visitas externas, por la seguridad de todos en el condominio.",
+    faq_q7:"🌦️ ¿Cómo es el clima en São Paulo?", faq_a7:"Puede llover en cualquier momento, incluso con sol — conviene tener siempre un paraguas a mano. Las temperaturas varían bastante durante el día.",
+    weather_btn:"Ver el pronóstico de hoy →", weather_chip:"Ver la temperatura de hoy y los próximos días",
+    conv_t:"💱 Conversor de moneda", conv_p:"Una estimación rápida en reales — verifica la cotización actual antes de cambiar montos grandes.",
+    conv_note:"Cotización aproximada del 18/09/2026 (Banco Central). Las tasas cambian a diario.",
+    faq_q8:"💵 ¿Debo dar propina?", faq_a8:"No es obligatoria en Brasil, pero el 10% es común en restaurantes (a veces ya incluido en la cuenta).",
+    faq_q9:"📶 Se cayó el Wi-Fi, ¿qué hago?", faq_a9:"Intenta reiniciar el router (apagar y encender de nuevo). Si sigue sin funcionar, escribe a Kamila por WhatsApp.",
+    faq_q10:"❄️ El aire acondicionado no enciende", faq_a10:"Revisa que el control remoto tenga pilas y esté apuntando directo al equipo. Si no se resuelve, escribe a Kamila.",
+    faq_q11:"🚿 La ducha no tiene agua caliente", faq_a11:"Verifica que la llave de la ducha esté en la posición de calentamiento. Si persiste, escribe a Kamila.",
+    faq_q12:"🔒 ¿Algún consejo de seguridad?", faq_a12:"Como en cualquier gran ciudad: evita usar el celular muy expuesto en la calle, prefiere Uber/99 de noche, y tranquilo — la zona es concurrida y está bien vigilada.",
+    apps_t:"📱 Apps útiles", apps_p:"Uber y 99 son las apps de transporte más usadas. Para comida, iFood y Rappi entregan bien en la zona. Si llegas sin internet, hay una tienda de operadora (chip/eSIM) dentro del Shopping Frei Caneca.",
+    toc_roteiro:"Itinerario sugerido", roteiro_sub:"Dime cuántos días te quedas y ajusto la sugerencia.",
+    roteiro_sub2:"Un día por pantalla — desliza hacia el lado para ver más.", roteiro_scroll_hint:"← desliza hacia el lado para ver más días →",
+    roteiro_ask_t:"📅 ¿Cuántos días te vas a quedar?", roteiro_ask_btn:"Armar",
+    day1_tag:"DÍA 1", day1_t:"MASP, Paulista y Oscar Freire", day1_p:"Mañana: MASP y Parque Trianon (10 min a pie). Almuerzo cerca de Paulista. Tarde: Rua Oscar Freire o Beco do Batman.",
+    day2_tag:"DÍA 2", day2_t:"Mercadão y Centro Histórico", day2_p:"Mañana: Mercado Municipal (Mercadão). Tarde: Centro Histórico, con la Catedral da Sé y el Pátio do Colégio.",
+    day3_tag:"DÍA 3", day3_t:"Ibirapuera y Liberdade", day3_p:"Mañana: Parque Ibirapuera. Almuerzo en Liberdade — si es domingo, alcanzas también la feria de artesanías.",
+    day4_tag:"DÍA 4+", day4_t:"Vila Madalena y más allá", day4_p:"Con más tiempo: recorrer con calma Vila Madalena, la Pinacoteca, e incluso una escapada a la Zona Sur de la ciudad.",
+    roteiro_neg_tag:"POR NEGOCIOS", roteiro_neg_t:"Aquí por negocios / evento", roteiro_neg_p:"Frei Caneca está literalmente enfrente. Para cenar después del trabajo, Famiglia Mancini o los restaurantes de Paulista están a pocos minutos.",
+    toc_guestbook:"Mensajes de huéspedes", guestbook_sub:"Un rincón para que huéspedes anteriores dejen una palabra para los próximos.",
+    guestbook_placeholder:"Escribe tu mensaje...", guestbook_btn:"Enviar mensaje", guestbook_hint:"Tu mensaje llega directo a Kamila — le encanta leerlos y a veces los comparte aquí con futuros huéspedes.",
+    toc_idioma:"Frases en portugués", idioma_sub:"Frases útiles para el día a día por aquí.",
+    fr_col_pt:"Portugués", fr_col_mean:"Significado",
+    fr_1:"Hola", fr_2:"Buenos días / buenas tardes / buenas noches", fr_3:"Por favor", fr_4:"Gracias", fr_5:"Disculpa / con permiso", fr_6:"¿Cuánto cuesta?", fr_7:"¿Dónde está el baño?", fr_8:"¿Hablas inglés?", fr_9:"No hablo portugués", fr_10:"Necesito un médico", fr_11:"¡Socorro! / ¡Ayuda!", fr_12:"Llama a la policía",
+    trad_t:"🔤 Traductor rápido", trad_p:"Escribe algo abajo y abre la traducción directo en Google Traductor.", trad_placeholder:"Escribe aquí...", trad_btn:"Traducir al portugués",
+    voz_t:"🎙️ Traductor de voz", voz_p:'No es posible poner una traducción de voz en vivo directamente aquí en la guía. Pero la app de Google Traductor tiene un modo "conversación" genial para hablar con Kamila o con cualquier persona en tiempo real — vale la pena descargarla antes del viaje.', voz_btn:"Buscar la app Google Traductor",
+    toc_passeios:"Tours y alquiler de auto", toc_passeios_short:"Tours y auto", toc_passeios_badge:"5% OFF", passeios_sub:"Reserva con anticipación y sin fila, directo con nuestros socios.",
+    passeios_gyg_t:"🎟️ Todos los tours en São Paulo", passeios_gyg_p:"Tours, museos y experiencias con reserva anticipada — evita la fila y asegura tu horario.", passeios_gyg_btn:"Ver todos los tours →",
+    passeios_city_t:"🚶 City tour a pie", passeios_city_p:"Conoce el Centro Histórico, la Paulista y los principales puntos con un guía local.", passeios_city_btn:"Ver city tours →",
+    passeios_food_t:"🍝 Tour gastronómico", passeios_food_p:"Prueba lo mejor de la comida paulistana con un guía especializado, incluyendo el Mercadão.", passeios_food_btn:"Ver tours gastronómicos →",
+    passeios_masp_t:"🖼️ Entrada MASP sin fila", passeios_masp_p:"Asegura tu horario en el museo que está a pocos pasos del apartamento.", passeios_masp_btn:"Ver entradas MASP →",
+    passeios_car_t:"🚗 Alquiler de auto", passeios_car_badge:"5% OFF", passeios_car_p:"Compara las mejores tarifas para tu estadía. Usa el cupón <b>DOMFERIAS</b> y obtén 5% de descuento — solo válido reservando por el botón de abajo.", passeios_car_btn:"Comparar tarifas con 5% OFF →",
+    pdf_btn:"Guardar guía en PDF",
+    notice_label:"📌 Avisos importantes", notice_default:"Sin avisos especiales por ahora — ¡disfruta tu estadía!",
+    checklist_t:"✅ Checklist antes de salir", cl_1:"Cafetera / estufa apagadas", cl_2:"Aire acondicionado apagado", cl_3:"Luces apagadas", cl_4:"Basura sacada", cl_5:"Nada olvidado en el enchufe / cargador", cl_6:"Puerta cerrada con llave al salir",
+    consul_t:"🌎 Consulados en São Paulo", consul_us:"Estados Unidos", consul_fr:"Francia", consul_es:"España", consul_cn:"China",
+    msg_checkin:"¡Llegué al apartamento, check-in hecho! 🏡", msg_checkout:"¡Ya salí del apartamento, dejé todo en orden! 👋",
+    msg_help:"¡Hola Kamila! Soy huésped del apto en Penaforte Mendes y necesito ayuda.", msg_extrahour:"¡Hola Kamila! Quisiera consultar disponibilidad para una hora adicional (R$50).",
+    pass_label:"Acceso rápido", pass_addr:"Dirección", pass_wifipass:"Contraseña Wi-Fi", pass_code:"Código de la puerta del apto", pass_hours:"Check-in / Check-out",
+    pass_note:"¿Necesitas algo durante tu estadía? Kamila responde rápido.", pass_btn:"Hablar con Kamila por WhatsApp",
+    checkin_sub:"Desde las 15h.",
+    checkin_1:"<b>Registra tu rostro antes de llegar</b>El acceso al condominio es por reconocimiento facial. Kamila te envía un enlace para registrar tu foto antes del viaje — sin eso, el torniquete no se abre.",
+    checkin_2:"<b>Llega a la dirección y entra por el facial</b>Rua Dr. Penaforte Mendes, 160. Tu rostro registrado libera el acceso en portería, sin necesidad de llave.",
+    checkin_3:"<b>Sube al 6º piso — Apartamento 602D</b>El apartamento está justo al llegar al piso.",
+    checkin_4:"<b>Marca 3110 en la puerta del apartamento</b>Ese código es solo de la cerradura de tu apto — la entrada del edificio ya se liberó con el facial.",
+    checkin_btn:"¡Llegué! Avisar a Kamila", qa_title:"¿Acabas de llegar o ya te vas?", qa_checkin_short:"¡Llegué!", qa_checkin_sub:"Avisar check-in", qa_checkout_short:"¡Ya salí!", qa_checkout_sub:"Avisar check-out",
+    apt_sub:"42m², balcón, 6º piso.",
+    apt_am1:"🛏️ Cama doble 1,38×1,88m", apt_am2:"🛋️ Sofá en la sala — se convierte en cama para reservas de 3+ huéspedes", apt_am3:"❄️ Aire acondicionado", apt_am4:"📺 Smart TV", apt_am5:"🍳 Cocina completa", apt_am6:"🧺 Ropa de cama y baño",
+    apt_light_title:"🌤️ Luz natural en el sofá cama", apt_light_p:"Esta información es sobre el área externa, donde está el sofá cama del 3er y 4º huésped. Aunque la cortina esté cerrada, el techo de vidrio deja entrar luz clara al amanecer — por eso, ofrecemos un antifaz para dormir, por si lo necesitas.",
+    cond_sub:"Infraestructura completa, sin necesidad de salir del edificio.",
+    cond_am1:"<b>6º piso</b>🏊 Piscina", cond_am2:"<b>6º piso</b>🏋️ Gimnasio", cond_am3:"<b>6º piso</b>🧖 Sauna", cond_am4:"<b>Planta baja</b>🛒 Mini mercado", cond_am5:"<b>Planta baja</b>💻 Coworking", cond_am6:"<b>Planta baja</b>🧺 Lavandería (R$12 lavar + R$12 secar)", cond_am7:"<b>1er piso</b>🗑️ Basura (ascensor de servicio)", cond_am8:"<b>Portería</b>👮 24h · facial + intercomunicador",
+    cond_hours_t:"🕒 Horario de piscina y gimnasio", cond_hours_p:"Gimnasio: de 6h a 0h, todos los días. Piscinas: de 8h a 22h, a diario — excepto el primer día hábil de la semana, cuando permanecen cerradas para limpieza y tratamiento del agua.",
+    cond_pool_t:"🏊 Reglas de la piscina", cond_pool_p:"No está permitido comer o beber en el área de la piscina. Tampoco está permitido circular en traje de baño fuera del área de la piscina.",
+    reg_silence_t:"🤫 Ley del silencio", reg_silence_p:"Para mantener la armonía con los vecinos, el condominio exige silencio de 22h a 7h. En caso de incumplimiento y multa aplicada por el condominio, el valor equivalente será cobrado a través de Airbnb.",
+    reg_visit_t:"🚫 Visitas externas", reg_visit_p:"No están permitidas, para garantizar la seguridad y privacidad de todos en el condominio.",
+    reg_smoke_t:"🚬 Fumar", reg_smoke_p:"Permitido solo en el área externa (balcón) del apartamento, con la puerta de vidrio cerrada.",
+    reg_guest_t:"👥 3er y 4º huésped", reg_guest_p:"Para reservas de hasta 2 huéspedes, preparamos la cama doble. Para usar el sofá cama (3er y 4º huésped), es necesario reservar para 3 personas — eso lo habilita automáticamente en la reserva.",
+    reg_hour_t:"⏱️ Hora adicional", reg_hour_p:"Es posible extender la salida por R$50, sujeto a disponibilidad. Toca el botón abajo para consultar con Kamila.", reg_hour_btn:"Pedir hora adicional",
+    reg_clean_t:"✨ Sin tarifa de limpieza", reg_clean_p:"Confiamos en el cuidado de los huéspedes con el espacio. Si el apartamento se devuelve en malas condiciones, puede aplicarse una tarifa extra de R$250.",
+    reg_kit_t:"🧴 Kits extra", reg_kit_p:"Toallas y ropa de cama adicionales disponibles por R$50 por persona, bajo solicitud.",
+    reg_linen_t:"🧺 Cuidado con la ropa de cama", reg_linen_p:"Pedimos cuidado al usar maquillaje, protector solar u otros productos que manchan. En caso de mancha irreversible o daño, el valor de reposición es:",
+    reg_table_item:"Artículo", reg_table_price:"Reposición", reg_item1:"Sábana", reg_item2:"Toalla de baño", reg_item3:"Toalla de mano",
+    checkout_sub:"Hasta las 11h.",
+    checkout_1:"<b>Saca la basura</b>Llévala al cuarto de basura del 1er piso, por el ascensor de servicio.",
+    checkout_2:"<b>Nada de papel higiénico en el inodoro</b>Tíralo siempre a la basura — si se tapa la tubería, se cobra una tarifa de R$300.",
+    checkout_3:"<b>Apaga todo</b>Aire acondicionado, luces, y cierra la puerta con llave.",
+    checkout_4:"<b>¡Listo!</b>Por favor, avisa que ya saliste tocando el botón de abajo. Cualquier cosa, escribe por WhatsApp.",
+    checkout_btn:"¡Ya salí! Avisar a Kamila",
+    regiao_sub:"En el corazón de Bela Vista, a 1km de la Av. Paulista.", dm_title:"Mapa de proximidad", dm_caption:"Posición y distancia reales respecto al apartamento — solo que no es el mapa de calles de Google.", dm_here:"Estás aquí", dm_cluster:"Frei Caneca y metro — menos de 1km", regiao_open_map:"Abrir ubicación en Maps", regiao_map_btn:"Ver mapa completo con todos los puntos", regiao_hint:'O toca "Ver ruta" en cada tarjeta abajo para ir directo a un lugar específico.', qa_hint:"Un toque avisa a Kamila, incluso por WhatsApp.",
+    c_frei_t:"Shopping y Centro de Convenciones Frei Caneca", c_frei_d:"enfrente", c_frei_p:"Ideal si viniste para un congreso — solo cruza la calle. También tiene cine, restaurantes y tiendas.",
+    cat_hosp:"Hospitales cercanos", c_sirio_t:"Hospital Sírio-Libanês", c_9dj_t:"Hospital 9 de Julho", c_sc_t:"Hospital Santa Catarina", c_oc_t:"Hospital Alemão Oswaldo Cruz", c_sam_t:"Hospital Samaritano (Higienópolis)",
+    c_pm_t:"Pro Matre Paulista", c_pm_p:"Si viniste para tratamiento o recuperación, las farmacias y el mini mercado del edificio están a mano, y el apartamento es silencioso para descansar.",
+    cat_sp:"Para conocer São Paulo",
+    c_masp_t:"MASP", c_masp_p:"Uno de los museos más importantes de América Latina.",
+    c_tri_t:"Parque Trianon", c_tri_addr:"Av. Paulista, s/n — justo enfrente del MASP", c_tri_p:"Un pedacito de Mata Atlántica en medio de la avenida, ideal para una pausa.",
+    c_ibi_t:"Parque Ibirapuera", c_ibi_p:"El parque más conocido de la ciudad, con museos y ciclovía.",
+    c_beco_t:"Beco do Batman", c_beco_p:"Galería de arte urbano al aire libre, en uno de los barrios más bohemios de SP.",
+    c_osc_t:"Rua Oscar Freire", c_osc_p:"La calle más elegante de São Paulo — marcas de lujo, cafés y vitrinas hermosas.",
+    c_lib_t:"Liberdade", c_lib_addr:"Barrio japonés — Liberdade", c_lib_p:"La mayor colonia japonesa fuera de Japón: comida callejera, feria de artesanías los fines de semana y tiendas orientales.",
+    c_se_t:"Sé y Centro Histórico", c_se_addr:"Catedral da Sé, Pátio do Colégio, Pinacoteca", c_se_p:"La cuna de São Paulo — arquitectura histórica y museos al aire libre.",
+    c_merc_t:"Mercado Municipal (Mercadão)",
+    route:"Ver ruta →",
+    metro_sub:"Las estaciones más cercanas, todas a pocos minutos a pie.",
+    m_cons_t:"Consolação", m_cons_p:"Otra opción cercana, en la línea Verde.",
+    m_hig_t:"Higienópolis-Mackenzie", m_hig_p:"La estación más cercana al apartamento. Conecta directo con la línea Verde en Paulista.",
+    m_tri_t:"Trianon-MASP", m_tri_p:"Baja directo en la Av. Paulista, frente al museo.",
+    m_bri_t:"Brigadeiro", line_verde:"Línea Verde", line_amarela:"Línea Amarilla",
+    metro_closing:"Los carriles de bus en Consolação, 9 de Julho, 23 de Maio y Paulista llegan a casi cualquier parte de la ciudad. Uber y 99 funcionan bien en toda São Paulo.",
+    tel_kamila:" · WhatsApp", tel_portaria_label:"Portería del edificio", tel_portaria:" · por el intercomunicador, extensión del apto",
+    tel_policia_label:"Policía", tel_policia:" · emergencia", tel_samu_label:"SAMU", tel_samu:" · emergencia médica", tel_bomb_label:"Bomberos", tel_bomb:" · emergencia",
+    footer_script:"Espero que tu estadía sea tranquila", footer_p:"y que São Paulo te reciba tan bien como intenté recibirte yo. Cualquier cosa, solo escribe.", footer_btn:"Hablar con Kamila por WhatsApp",
+    review_ask_p:"🌟 Si puedes, deja una nota 5 en Airbnb — ¡nos ayuda muchísimo! Gracias 💛", review_ask_btn:"Ver anuncio en Airbnb"
+  },
+  zh: {
+    lang_switch:"语言", search_placeholder:"搜索指南内容...", search_none:"未找到相关内容。",
+    hero_welcome:"欢迎", hero_title:"开启您的下一次住宿",
+    hero_p:"这是您的住宿指南——从抵达、安顿到探索圣保罗，所需的一切都在这里。",
+    hero_sign:"祝您愉快，Kamila", hero_sub:"超赞房东 · 接待房客4年 · 5.0 ★",
+    toc_title:"指南目录", toc_1:"抵达与入住", toc_2:"公寓介绍", toc_3:"大楼设施", toc_4:"须知事项", toc_5:"离开与退房", toc_6:"周边与地图", toc_7:"附近美食", toc_8:"地铁与交通", toc_9:"常用电话", toc_11:"常见问题",
+    comer_sub:"步行几分钟即可到达的几家日常推荐餐厅。",
+    c_donajulia_t:"Dona Julia Restaurante e Grill", c_donajulia_p:"巴西家常菜，自助称重与单点皆有——适合不想费心挑选的一餐。",
+    c_baoba_t:"Baobá Café", c_baoba_p:"自家烘焙的精品咖啡——早餐或小憩的好去处。",
+    c_giraffas_t:"Giraffas", c_giraffas_d:"马路对面", c_giraffas_p:"位于对面购物中心内，方便快捷——时间紧张时的好选择。",
+    c_zena_t:"Zena Cucina", c_zena_p:"意大利菜，曾获米其林指南推荐——适合特别的晚餐场合。",
+    c_mancini_t:"Famiglia Mancini", c_mancini_p:"圣保罗的传奇餐厅——经典意式餐馆，提供开胃菜自助、意面和现场音乐。建议早点到，通常需要排队。",
+    c_mamma_t:"Cantina Mamma Celeste", c_mamma_p:"位于Bixiga核心地带的街坊餐厅，自制意面分量丰盛——传统朴实，没有架子。",
+    eat_cafe:"早餐", eat_almoco:"午餐", eat_jantar:"晚餐", eat_jardins:"Jardins区（约2公里，建议打车）", eat_freicaneca:"Frei Caneca购物中心内（对面）",
+    c_bellap_t:"Padaria Bella Paulista", c_bellap_p:"圣保罗最具代表性的24小时面包店——面包房、肉铺、寿司和餐厅一应俱全。",
+    eat_lykke_p:"手工夹心饼干、蛋糕和咖啡。",
+    eat_bellapaim_p:"面包房+酒吧；丰盛早餐，晚上变身披萨店（8点至凌晨）。",
+    eat_boulevard_p:"Higienópolis著名的面包店——琳琅满目的咸点甜点，现烤面包。",
+    eat_fabrique_p:"法式风格面包房/brunch——牛角包、班尼迪克蛋。",
+    c_adriata_t:"Adriata Restaurante", c_adriata_p:"巴西／现代风味，分量丰盛——菲力牛排和海鲜。是所有选项中离公寓最近的。",
+    eat_recanto_p:"巴西家常菜，按量称重自助式。",
+    eat_jardan_p:"按重量计费自助餐／单点，保利斯塔大道上的老字号。",
+    c_kome_t:"Kome（Bela Vista）", c_kome_p:"人气日料，寿司自助好评如潮——建议提前预订。",
+    eat_bistroav_p:"法式现代风味——羊肉菲力配蘑菇烩饭是招牌菜。",
+    eat_cantinaq_p:"传统意式餐馆，气氛热闹，配现场音乐。",
+    c_matarazzo_t:"Hotel Matarazzo（Rosewood）", c_matarazzo_p:"酒店内多家餐厅：Le Jardin（精致餐饮，⭐4.2）、Blaise（法式休闲）、Taraz（名厨Felipe Bronze掌勺）、Rabo di Galo（特调鸡尾酒）及Bela Vista Bar。适合特别场合——建议提前预订。",
+    eat_terraco_p:"室内花园环境的自助餐/brunch——适合聚会。",
+    eat_tuy_p:"西班牙／地中海风味，分量丰盛（非小份tapas）——72小时慢煮羊肉和章鱼是招牌。",
+    eat_altruista_p:"广受好评的意大利餐厅——意面和烩饭备受赞誉，酒单丰富。",
+    eat_bistrotparis_p:"屡获殊荣的经典法式小酒馆——惠灵顿牛排、油封鸭腿、千层酥。",
+    eat_miro_p:"优雅现代的环境——适合浪漫晚餐或朋友聚会。",
+    eat_praca_t:"美食广场（2楼）", eat_praca_p:"Mr. Cheney（松饼/曲奇，⭐4.8）、Coração Mineiro（米纳斯自助，⭐4.0）、Divino Fogão（自助餐，⭐3.8）、Chiquinho冰淇淋等。",
+    eat_piso3_t:"餐厅楼层（3楼）", eat_piso3_p:"Outback Steakhouse（⭐4.4）、Temakeria e Cia（手卷任食，⭐4.1）、Pateo da Luz（巴西菜配现场音乐，⭐4.2）、North Bar e Grill（⭐4.3）、FREEDOM Kitchen & Bar（⭐4.4）。",
+    eat_footnote:"评分和营业时间可能有变，出发前请再次确认。",
+    faq_q1:"✈️ 哪个机场最近？", faq_a1:"孔戈尼亚斯机场（CGH）最近，车程约20-30分钟。瓜鲁柳斯国际机场（GRU）较远，视路况约需45-60分钟。",
+    faq_q2:"💳 刷卡还是现金？", faq_a2:"在圣保罗，从超市到出租车几乎都可以刷卡或使用Pix支付，不需要携带太多现金。",
+    faq_q3:"💊 有全天营业的药店吗？", faq_a3:"Ultrafarma 24小时药店——Av. Paulista, 329, Bela Vista，距公寓约1公里。",
+    faq_q4:"🕐 可以晚点退房吗？", faq_a4:"可以，支付50雷亚尔即可（视当天情况而定）。点击「须知事项」章节中的「申请延时退房」按钮即可。",
+    faq_q5:"🚬 可以吸烟吗？", faq_a5:"仅可在室外区域（阳台）吸烟，且需关闭玻璃门。",
+    faq_q6:"👥 可以带访客吗？", faq_a6:"不可以——为保障大楼内所有人的安全，不允许外部访客。",
+    faq_q7:"🌦️ 圣保罗的天气怎么样？", faq_a7:"即使阳光明媚，也随时可能下雨——最好随身携带雨伞。一天之内气温变化也可能较大。",
+    weather_btn:"查看今日天气预报 →", weather_chip:"查看今日及未来几天气温",
+    conv_t:"💱 货币转换器", conv_p:"快速估算雷亚尔金额——兑换大额款项前请查看当前汇率。",
+    conv_note:"汇率数据约为2026年9月18日（巴西中央银行），汇率每日变动。",
+    faq_q8:"💵 需要给小费吗？", faq_a8:"在巴西不是强制的，但在餐厅给10%左右是常见做法（有时账单中已包含）。",
+    faq_q9:"📶 Wi-Fi断了怎么办？", faq_a9:"请尝试重启路由器（拔插电源）。如果仍无法使用，请通过WhatsApp联系Kamila。",
+    faq_q10:"❄️ 空调打不开", faq_a10:"请检查遥控器电池，并确保直接对准空调机身。如果仍无法解决，请联系Kamila。",
+    faq_q11:"🚿 淋浴没有热水", faq_a11:"请检查淋浴开关是否切换到加热位置。若问题持续，请联系Kamila。",
+    faq_q12:"🔒 有安全提示吗？", faq_a12:"和任何大城市一样：避免在街上明显展示手机，晚上尽量使用Uber/99出行，放心——这一带人流量大且监控良好。",
+    apps_t:"📱 实用APP", apps_p:"Uber和99是最常用的打车软件。餐饮方面，iFood和Rappi在本区域配送良好。如果到达时没有网络，Frei Caneca购物中心内有运营商门店可购买电话卡或eSIM。",
+    toc_roteiro:"行程建议", roteiro_sub:"告诉我您会住几天，我来为您调整建议。",
+    roteiro_sub2:"一天一屏——向旁边滑动查看更多。", roteiro_scroll_hint:"← 向旁边滑动查看更多天数 →",
+    roteiro_ask_t:"📅 您会住几天？", roteiro_ask_btn:"生成建议",
+    day1_tag:"第1天", day1_t:"MASP、保利斯塔与奥斯卡·弗雷雷街", day1_p:"上午：MASP和特里亚农公园（步行10分钟）。在保利斯塔大道附近用午餐。下午：奥斯卡·弗雷雷街或蝙蝠侠小巷。",
+    day2_tag:"第2天", day2_t:"市立市场与历史中心", day2_p:"上午：市立市场（Mercadão）。下午：历史中心，包括主教座堂和学院庭院。",
+    day3_tag:"第3天", day3_t:"伊比拉普埃拉与自由区", day3_p:"上午：伊比拉普埃拉公园。午餐在自由区——如果恰逢周日，还能赶上手工艺市集。",
+    day4_tag:"第4天+", day4_t:"Vila Madalena及更多", day4_p:"如果时间更充裕：悠闲地逛逛Vila Madalena、参观Pinacoteca美术馆，甚至安排一次前往南区的短途出行。",
+    roteiro_neg_tag:"商务出行", roteiro_neg_t:"因商务/会议来访", roteiro_neg_p:"Frei Caneca就在正对面。下班后想吃晚餐的话，Famiglia Mancini或保利斯塔大道沿线的餐厅都只需几分钟车程。",
+    toc_guestbook:"房客留言", guestbook_sub:"为曾经住过这里的房客留一句话给下一位房客的小角落。",
+    guestbook_placeholder:"写下您的留言...", guestbook_btn:"发送留言", guestbook_hint:"您的留言会直接发送给Kamila——她很喜欢阅读，有时也会将留言分享在这里，给未来的房客看。",
+    toc_idioma:"葡萄牙语常用语", idioma_sub:"在这里实用的日常短语。",
+    fr_col_pt:"葡萄牙语", fr_col_mean:"含义",
+    fr_1:"你好", fr_2:"早上好 / 下午好 / 晚上好", fr_3:"请", fr_4:"谢谢", fr_5:"不好意思／借过", fr_6:"多少钱？", fr_7:"洗手间在哪里？", fr_8:"你会说英语吗？", fr_9:"我不会说葡萄牙语", fr_10:"我需要看医生", fr_11:"救命！／帮帮我！", fr_12:"请叫警察",
+    trad_t:"🔤 快速翻译", trad_p:"在下方输入内容，直接在Google翻译中打开译文。", trad_placeholder:"在此输入...", trad_btn:"翻译成葡萄牙语",
+    voz_t:"🎙️ 语音翻译", voz_p:"本指南暂时无法直接提供实时语音翻译功能。不过Google翻译App有很棒的「对话」模式，可与Kamila或任何人实时对话——建议出发前先下载好。", voz_btn:"搜索Google翻译App",
+    toc_passeios:"游览与租车", toc_passeios_short:"游览租车", toc_passeios_badge:"95折优惠", passeios_sub:"通过我们的合作伙伴提前预订，无需排队。",
+    passeios_gyg_t:"🎟️ 圣保罗全部游览项目", passeios_gyg_p:"提前预订游览、博物馆和体验活动——免排队，锁定您的时段。", passeios_gyg_btn:"查看全部游览 →",
+    passeios_city_t:"🚶 徒步城市游览", passeios_city_p:"由当地导游带领，游览历史中心、保利斯塔大道及主要景点。", passeios_city_btn:"查看城市游览 →",
+    passeios_food_t:"🍝 美食之旅", passeios_food_p:"由专业向导带领，品尝圣保罗最地道的美食，包含市立市场。", passeios_food_btn:"查看美食之旅 →",
+    passeios_masp_t:"🖼️ MASP免排队门票", passeios_masp_p:"预订就在公寓附近的美术馆参观时段。", passeios_masp_btn:"查看MASP门票 →",
+    passeios_car_t:"🚗 租车", passeios_car_badge:"95折优惠", passeios_car_p:"比较您住宿期间的最优租车价格。使用优惠码 <b>DOMFERIAS</b> 即可享受5%折扣——仅限通过下方按钮预订时使用。", passeios_car_btn:"比较95折优惠价格 →",
+    pdf_btn:"保存指南为PDF",
+    notice_label:"📌 重要通知", notice_default:"目前没有特别通知——祝您住宿愉快！",
+    checklist_t:"✅ 离开前检查清单", cl_1:"咖啡机／炉灶已关闭", cl_2:"空调已关闭", cl_3:"灯已关闭", cl_4:"垃圾已清理", cl_5:"充电器／插座上没有遗留物品", cl_6:"离开时已锁门",
+    consul_t:"🌎 圣保罗领事馆", consul_us:"美国", consul_fr:"法国", consul_es:"西班牙", consul_cn:"中国",
+    msg_checkin:"我已到达公寓，入住办理完成！🏡", msg_checkout:"我已离开公寓，一切都已整理好！👋",
+    msg_help:"您好Kamila！我是Penaforte Mendes公寓的房客，需要一些帮助。", msg_extrahour:"您好Kamila！我想咨询一下延时退房（50雷亚尔）是否可行。",
+    pass_label:"快速信息", pass_addr:"地址", pass_wifipass:"Wi-Fi密码", pass_code:"公寓门锁密码", pass_hours:"入住/退房时间",
+    pass_note:"住宿期间需要帮助？Kamila会很快回复您。", pass_btn:"通过WhatsApp联系Kamila",
+    checkin_sub:"下午3点起可入住。",
+    checkin_1:"<b>抵达前请先注册人脸</b>大楼入口使用人脸识别系统。Kamila会在您出发前发送链接，请提前注册照片——否则闸机无法开启。",
+    checkin_2:"<b>到达地址后通过人脸识别进入</b>地址：Rua Dr. Penaforte Mendes, 160。注册的人脸信息可直接开启前台闸机，无需钥匙或门卡。",
+    checkin_3:"<b>前往6楼 — 602D公寓</b>公寓就在电梯出口附近。",
+    checkin_4:"<b>在公寓门上输入3110</b>此密码仅用于您公寓的门锁——大楼入口已通过人脸识别开启。",
+    checkin_btn:"我到了！通知Kamila", qa_title:"您是刚到达，还是准备离开？", qa_checkin_short:"我到了！", qa_checkin_sub:"通知入住", qa_checkout_short:"我离开了！", qa_checkout_sub:"通知退房",
+    apt_sub:"42平米公寓，带阳台，位于6楼。",
+    apt_am1:"🛏️ 双人床 1.38×1.88米", apt_am2:"🛋️ 客厅沙发 — 预订3位及以上房客时可作为床使用", apt_am3:"❄️ 空调", apt_am4:"📺 智能电视", apt_am5:"🍳 齐全厨房设备", apt_am6:"🧺 床品与浴巾",
+    apt_light_title:"🌤️ 沙发床区域的采光说明", apt_light_p:"此说明针对外部区域，即第3、4位房客所住的沙发床位置。即使拉上窗帘，玻璃顶棚在清晨仍会透入明亮的光线——因此我们会提供睡眠眼罩，如有需要请告知。",
+    cond_sub:"设施齐全，无需离开大楼。",
+    cond_am1:"<b>6楼</b>🏊 游泳池", cond_am2:"<b>6楼</b>🏋️ 健身房", cond_am3:"<b>6楼</b>🧖 桑拿房", cond_am4:"<b>一楼</b>🛒 迷你超市", cond_am5:"<b>一楼</b>💻 共享办公空间", cond_am6:"<b>一楼</b>🧺 洗衣房（洗12雷亚尔+烘干12雷亚尔）", cond_am7:"<b>二楼</b>🗑️ 垃圾间（走服务电梯）", cond_am8:"<b>前台</b>👮 24小时 · 人脸识别+对讲机",
+    cond_hours_t:"🕒 泳池与健身房开放时间", cond_hours_p:"健身房：每天6:00至次日0:00开放。泳池：每天8:00至22:00开放——每周第一个工作日除外，当天会因清洁及水质处理而关闭。",
+    cond_pool_t:"🏊 泳池规定", cond_pool_p:"泳池区域内禁止饮食。同时禁止穿着泳装离开泳池区域在楼内走动。",
+    reg_silence_t:"🤫 安静时段规定", reg_silence_p:"为了与邻居保持和睦，大楼要求22:00至次日7:00保持安静。如因违反规定被大楼罚款，相应金额将通过Airbnb收取。",
+    reg_visit_t:"🚫 谢绝外来访客", reg_visit_p:"为保障大楼内所有人的安全与隐私，不允许外部访客。",
+    reg_smoke_t:"🚬 吸烟", reg_smoke_p:"仅允许在公寓的室外区域（阳台）吸烟，且需关闭玻璃门。",
+    reg_guest_t:"👥 第3、4位房客", reg_guest_p:"预订2位房客时，我们会准备双人床。若需使用沙发床（第3、4位房客），请按3位房客预订——系统会自动开通该选项。",
+    reg_hour_t:"⏱️ 延时退房", reg_hour_p:"可支付50雷亚尔延长退房时间，视当日情况而定。点击下方按钮向Kamila确认。", reg_hour_btn:"申请延时退房",
+    reg_clean_t:"✨ 无需清洁费", reg_clean_p:"我们相信房客会爱惜这个空间。如公寓归还时状况不佳，可能会收取250雷亚尔的额外清洁费。",
+    reg_kit_t:"🧴 额外备品", reg_kit_p:"如需额外毛巾和床品，每人收费50雷亚尔，请提前告知。",
+    reg_linen_t:"🧺 请爱护布草用品", reg_linen_p:"请注意化妆品、防晒霜等易造成污渍的产品。若造成无法清除的污渍或损坏，赔偿金额如下：",
+    reg_table_item:"物品", reg_table_price:"赔偿金额", reg_item1:"床单", reg_item2:"浴巾", reg_item3:"面巾",
+    checkout_sub:"退房时间为上午11点前。",
+    checkout_1:"<b>带走垃圾</b>请走服务电梯，将垃圾带到1楼的垃圾间。",
+    checkout_2:"<b>请勿将厕纸丢入马桶</b>请丢入垃圾桶——若造成堵塞，将收取300雷亚尔的费用。",
+    checkout_3:"<b>关闭所有电器</b>关闭空调、灯光，并锁好房门。",
+    checkout_4:"<b>大功告成！</b>请点击下方按钮告知我们您已离开。有任何问题，请通过WhatsApp联系。",
+    checkout_btn:"我已离开！通知Kamila",
+    regiao_sub:"位于Bela Vista街区中心，距保利斯塔大道1公里。", dm_title:"周边距离示意图", dm_caption:"相对公寓的真实方向与距离——但不是Google街道地图。", dm_here:"您在这里", dm_cluster:"Frei Caneca及地铁站 — 1公里以内", regiao_open_map:"在地图中打开位置", regiao_map_btn:"查看包含所有地点的完整地图", regiao_hint:"或点击下方每张卡片上的\"查看路线\"，直达指定地点。", qa_hint:"轻触一下即可通知Kamila，包括通过WhatsApp。",
+    c_frei_t:"Frei Caneca购物中心暨会展中心", c_frei_d:"马路对面", c_frei_p:"如果您是来参加会议的，过马路就到——也有电影院、餐厅和商店。",
+    cat_hosp:"附近医院", c_sirio_t:"Sírio-Libanês医院", c_9dj_t:"9 de Julho医院", c_sc_t:"Santa Catarina医院", c_oc_t:"Oswaldo Cruz德国医院", c_sam_t:"Samaritano医院（Higienópolis院区）",
+    c_pm_t:"Pro Matre Paulista医院", c_pm_p:"若您是来接受治疗或恢复的，附近药店及大楼内的迷你超市都很方便，公寓也十分安静，适合休养。",
+    cat_sp:"探索圣保罗",
+    c_masp_t:"圣保罗艺术博物馆（MASP）", c_masp_p:"拉丁美洲最重要的艺术博物馆之一。",
+    c_tri_t:"特里亚农公园", c_tri_addr:"保利斯塔大道，就在MASP对面", c_tri_p:"大道中央的一片大西洋雨林，是休息的好地方。",
+    c_ibi_t:"伊比拉普埃拉公园", c_ibi_p:"圣保罗最知名的公园，内有多座博物馆和自行车道。",
+    c_beco_t:"蝙蝠侠小巷", c_beco_p:"位于圣保罗最具波西米亚气息街区之一的露天街头艺术画廊。",
+    c_osc_t:"奥斯卡·弗雷雷街", c_osc_p:"圣保罗最时尚的街道——名牌店、咖啡馆和精美的橱窗。",
+    c_lib_t:"自由区（日本街）", c_lib_addr:"日本人街区 — Liberdade", c_lib_p:"日本以外最大的日裔社区：街头小吃、周末手工艺市集和东方小店。",
+    c_se_t:"主教座堂与历史中心", c_se_addr:"主教座堂、学院庭院、Pinacoteca美术馆", c_se_p:"圣保罗的发源地——历史建筑与露天博物馆。",
+    c_merc_t:"市立市场（Mercadão）",
+    route:"查看路线 →",
+    metro_sub:"最近的地铁站，均步行几分钟可达。",
+    m_cons_t:"Consolação站", m_cons_p:"另一个附近的选择，绿线站点。",
+    m_hig_t:"Higienópolis-Mackenzie站", m_hig_p:"离公寓最近的地铁站，可在保利斯塔大道直接换乘绿线。",
+    m_tri_t:"Trianon-MASP站", m_tri_p:"直接抵达保利斯塔大道，就在博物馆对面。",
+    m_bri_t:"Brigadeiro站", line_verde:"绿线", line_amarela:"黄线",
+    metro_closing:"Consolação、9 de Julho、23 de Maio及Paulista的公交专用道几乎可到达市内任何地方。Uber和99打车软件在圣保罗全城都很好用。",
+    tel_kamila:" · WhatsApp", tel_portaria_label:"大楼前台", tel_portaria:" · 通过对讲机，拨打公寓分机",
+    tel_policia_label:"警察", tel_policia:" · 紧急情况", tel_samu_label:"SAMU急救", tel_samu:" · 医疗急救", tel_bomb_label:"消防队", tel_bomb:" · 紧急情况",
+    footer_script:"希望您的住宿舒适安心", footer_p:"也希望圣保罗给您的欢迎，如同我用心为您准备的一样。有任何需要，请随时联系我。", footer_btn:"通过WhatsApp联系Kamila",
+    review_ask_p:"🌟 如果您喜欢这次住宿，麻烦在Airbnb给个5星好评——对我们帮助非常大！谢谢您 💛", review_ask_btn:"查看Airbnb房源"
+  },
+  fr: {
+    lang_switch:"Langue", search_placeholder:"Rechercher dans le guide...", search_none:"Aucun résultat.",
+    hero_welcome:"Bienvenue", hero_title:"à votre prochain séjour",
+    hero_p:"Voici votre guide de séjour — tout ce qu'il vous faut pour arriver, vous sentir chez vous et profiter de São Paulo, en un seul endroit.",
+    hero_sign:"avec tendresse, Kamila", hero_sub:"SUPERHÔTE · 4 ANS D'ACCUEIL · 5,0 ★",
+    toc_title:"Dans ce guide", toc_1:"Arrivée & check-in", toc_2:"L'appartement", toc_3:"L'immeuble", toc_4:"Bon à savoir", toc_5:"Départ & check-out", toc_6:"Aux alentours & carte", toc_7:"Manger à proximité", toc_8:"Métro & mobilité", toc_9:"Numéros utiles", toc_11:"FAQ rapide",
+    comer_sub:"Quelques recommandations pour le quotidien, à quelques minutes de l'appartement.",
+    c_donajulia_t:"Dona Julia Restaurante e Grill", c_donajulia_p:"Cuisine maison brésilienne, self-service et à la carte — parfait pour un déjeuner simple.",
+    c_baoba_t:"Baobá Café", c_baoba_p:"Café de spécialité torréfié maison — idéal pour le petit-déjeuner ou une pause.",
+    c_giraffas_t:"Giraffas", c_giraffas_d:"en face", c_giraffas_p:"Pratique et rapide, dans le centre commercial juste en face — parfait quand le temps manque.",
+    c_zena_t:"Zena Cucina", c_zena_p:"Cuisine italienne, distinguée par le Guide Michelin — excellent choix pour un dîner spécial.",
+    c_mancini_t:"Famiglia Mancini", c_mancini_p:"Une institution de São Paulo — trattoria classique avec buffet d'antipasti, pâtes et musique live. Venez tôt, il y a souvent la queue.",
+    c_mamma_t:"Cantina Mamma Celeste", c_mamma_p:"Une cantina de quartier au cœur du Bixiga, pâtes maison généreuses — traditionnelle et sans prétention.",
+    eat_cafe:"Petit-déjeuner", eat_almoco:"Déjeuner", eat_jantar:"Dîner", eat_jardins:"Jardins (~2km, ça vaut un Uber)", eat_freicaneca:"Au Shopping Frei Caneca (en face)",
+    c_bellap_t:"Padaria Bella Paulista", c_bellap_p:"La boulangerie la plus emblématique de São Paulo, ouverte 24h/24 — boulangerie, boucherie, sushi et restaurant réunis.",
+    eat_lykke_p:"Cookies fourrés artisanaux, tartes et café.",
+    eat_bellapaim_p:"Boulangerie + bar ; petit-déjeuner complet, devient une pizzeria le soir (8h–minuit).",
+    eat_boulevard_p:"La célèbre boulangerie d'Higienópolis — immense vitrine de pâtisseries salées et sucrées, pain frais.",
+    eat_fabrique_p:"Boulangerie/brunch de style français — croissants, œufs bénédictine.",
+    c_adriata_t:"Adriata Restaurante", c_adriata_p:"Brésilienne/contemporaine, portions généreuses — picanha et fruits de mer. L'option la plus proche de toutes.",
+    eat_recanto_p:"Cuisine maison brésilienne, style plat du jour / self-service.",
+    eat_jardan_p:"Buffet au poids/à la carte, un classique de l'avenue Paulista.",
+    c_kome_t:"Kome (Bela Vista)", c_kome_p:"Japonais branché, rodízio de sushi bien noté — pensez à réserver.",
+    eat_bistroav_p:"Franco-contemporain — la picanha d'agneau au risotto de champignons est le favori.",
+    eat_cantinaq_p:"Cantina italienne traditionnelle, animée, avec musique live.",
+    c_matarazzo_t:"Hotel Matarazzo (Rosewood)", c_matarazzo_p:"Un complexe avec plusieurs restaurants : Le Jardin (gastronomique, ⭐4.2), Blaise (français décontracté), Taraz (chef Felipe Bronze), Rabo di Galo (cocktails signature) et Bela Vista Bar. Parfait pour une occasion spéciale — réservez à l'avance.",
+    eat_terraco_p:"Buffet/brunch dans un jardin intérieur — idéal pour les groupes.",
+    eat_tuy_p:"Espagnole/méditerranéenne, portions généreuses (pas de petites tapas) — l'agneau 72h et le poulpe se distinguent.",
+    eat_altruista_p:"Italien très primé — pâtes et risottos très appréciés, immense carte des vins.",
+    eat_bistrotparis_p:"Bistrot français classique primé — beef wellington, confit de canard, mille-feuille.",
+    eat_miro_p:"Cadre élégant et moderne — parfait pour un dîner romantique ou entre amis.",
+    eat_praca_t:"Food court (2ème étage)", eat_praca_p:"Mr. Cheney (pancakes/cookies ⭐4.8), Coração Mineiro (buffet ⭐4.0), Divino Fogão (self-service ⭐3.8), Chiquinho Sorvetes et d'autres.",
+    eat_piso3_t:"Étage des restaurants (3ème étage)", eat_piso3_p:"Outback Steakhouse (⭐4.4), Temakeria e Cia (temaki à volonté, ⭐4.1), Pateo da Luz (brésilien, musique live, ⭐4.2), North Bar e Grill (⭐4.3), FREEDOM Kitchen & Bar (⭐4.4).",
+    eat_footnote:"Les notes et horaires peuvent changer — vérifiez avant d'y aller.",
+    faq_q1:"✈️ Quel est l'aéroport le plus proche ?", faq_a1:"Congonhas (CGH) est le plus proche, environ 20-30 min en voiture. Guarulhos (GRU), l'aéroport international, est plus loin — environ 45-60 min selon le trafic.",
+    faq_q2:"💳 Carte ou espèces ?", faq_a2:"À São Paulo, la carte et le Pix sont acceptés presque partout, du supermarché au taxi. Pas besoin d'avoir beaucoup d'espèces sur vous.",
+    faq_q3:"💊 Une pharmacie ouverte à toute heure ?", faq_a3:"Ultrafarma 24h — Av. Paulista, 329, Bela Vista, à environ 1km de l'appartement.",
+    faq_q4:"🕐 Puis-je partir plus tard ?", faq_a4:'Oui, pour 50R$ selon disponibilité. Il suffit d\'appuyer sur le bouton « Demander une heure supplémentaire » dans la section « Bon à savoir ».',
+    faq_q5:"🚬 Puis-je fumer ?", faq_a5:"Seulement dans l'espace extérieur (balcon), porte vitrée fermée.",
+    faq_q6:"👥 Puis-je recevoir des visiteurs ?", faq_a6:"Non — les visiteurs extérieurs ne sont pas autorisés, pour la sécurité de tous dans l'immeuble.",
+    faq_q7:"🌦️ Quel temps fait-il à São Paulo ?", faq_a7:"Il peut pleuvoir à tout moment, même avec du soleil — gardez toujours un parapluie à portée de main. Les températures varient beaucoup dans la journée.",
+    weather_btn:"Voir la météo du jour →", weather_chip:"Voir la température d'aujourd'hui et des prochains jours",
+    conv_t:"💱 Convertisseur de devises", conv_p:"Une estimation rapide en reais — vérifiez le taux actuel avant d'échanger de gros montants.",
+    conv_note:"Taux approximatif du 18/09/2026 (Banque Centrale du Brésil). Les taux changent chaque jour.",
+    faq_q8:"💵 Dois-je laisser un pourboire ?", faq_a8:"Ce n'est pas obligatoire au Brésil, mais 10% est courant au restaurant (parfois déjà inclus dans l'addition).",
+    faq_q9:"📶 Le Wi-Fi ne fonctionne plus, que faire ?", faq_a9:"Essayez de redémarrer le routeur (débranchez et rebranchez). Si le problème persiste, écrivez à Kamila sur WhatsApp.",
+    faq_q10:"❄️ La climatisation ne s'allume pas", faq_a10:"Vérifiez que la télécommande a des piles et qu'elle est bien dirigée vers l'appareil. Si le problème persiste, contactez Kamila.",
+    faq_q11:"🚿 Pas d'eau chaude sous la douche", faq_a11:"Vérifiez que le robinet de la douche est en position chauffage. Si le problème persiste, contactez Kamila.",
+    faq_q12:"🔒 Des conseils de sécurité ?", faq_a12:"Comme dans toute grande ville : évitez de sortir votre téléphone de façon trop visible dans la rue, privilégiez Uber/99 le soir, et détendez-vous — le quartier est animé et bien surveillé.",
+    apps_t:"📱 Applications utiles", apps_p:"Uber et 99 sont les applications de transport les plus utilisées. Pour la nourriture, iFood et Rappi livrent bien dans le quartier. Si vous arrivez sans internet, il y a une boutique d'opérateur (carte SIM/eSIM) dans le Shopping Frei Caneca.",
+    toc_roteiro:"Itinéraire suggéré", roteiro_sub:"Dites-moi combien de jours vous restez et j'ajuste la suggestion.",
+    roteiro_sub2:"Un jour par écran — glissez sur le côté pour voir plus.", roteiro_scroll_hint:"← glissez sur le côté pour plus de jours →",
+    roteiro_ask_t:"📅 Combien de jours restez-vous ?", roteiro_ask_btn:"Générer",
+    day1_tag:"JOUR 1", day1_t:"MASP, Paulista et Oscar Freire", day1_p:"Matin : MASP et le Parc Trianon (10 min à pied). Déjeuner près de Paulista. Après-midi : Rua Oscar Freire ou la ruelle Batman.",
+    day2_tag:"JOUR 2", day2_t:"Mercadão et Centre Historique", day2_p:"Matin : Marché Municipal (Mercadão). Après-midi : Centre Historique, avec la Cathédrale de la Sé et le Pátio do Colégio.",
+    day3_tag:"JOUR 3", day3_t:"Ibirapuera et Liberdade", day3_p:"Matin : Parc Ibirapuera. Déjeuner à Liberdade — si c'est un dimanche, profitez-en pour le marché artisanal.",
+    day4_tag:"JOUR 4+", day4_t:"Vila Madalena et au-delà", day4_p:"Avec plus de temps : flânez à Vila Madalena, visitez la Pinacoteca, et même une escapade dans la zone sud de la ville.",
+    roteiro_neg_tag:"VOYAGE D'AFFAIRES", roteiro_neg_t:"Ici pour affaires / un événement", roteiro_neg_p:"Frei Caneca est littéralement en face. Pour dîner après le travail, Famiglia Mancini ou les restaurants de Paulista sont à quelques minutes.",
+    toc_guestbook:"Messages des invités", guestbook_sub:"Un petit coin pour que les invités précédents laissent un mot pour les suivants.",
+    guestbook_placeholder:"Écrivez votre message...", guestbook_btn:"Envoyer le message", guestbook_hint:"Votre message part directement à Kamila — elle adore les lire et les partage parfois ici avec les futurs invités.",
+    toc_idioma:"Phrases en portugais", idioma_sub:"Phrases utiles pour le quotidien ici.",
+    fr_col_pt:"Portugais", fr_col_mean:"Signification",
+    fr_1:"Bonjour / Salut", fr_2:"Bonjour / bon après-midi / bonsoir", fr_3:"S'il vous plaît", fr_4:"Merci", fr_5:"Excusez-moi", fr_6:"Combien ça coûte ?", fr_7:"Où sont les toilettes ?", fr_8:"Parlez-vous anglais ?", fr_9:"Je ne parle pas portugais", fr_10:"J'ai besoin d'un médecin", fr_11:"Au secours !", fr_12:"Appelez la police",
+    trad_t:"🔤 Traducteur rapide", trad_p:"Écrivez quelque chose ci-dessous et ouvrez la traduction directement dans Google Traduction.", trad_placeholder:"Écrivez ici...", trad_btn:"Traduire en portugais",
+    voz_t:"🎙️ Traducteur vocal", voz_p:"Impossible d'intégrer une traduction vocale en direct fiable directement dans ce guide. Mais l'application Google Traduction a un excellent mode « conversation » pour parler avec Kamila ou n'importe qui en temps réel — à télécharger avant votre voyage.", voz_btn:"Rechercher l'application Google Traduction",
+    toc_passeios:"Excursions & location de voiture", toc_passeios_short:"Excursions & voiture", toc_passeios_badge:"5% OFF", passeios_sub:"Réservez à l'avance et évitez la queue, directement via nos partenaires.",
+    passeios_gyg_t:"🎟️ Toutes les excursions à São Paulo", passeios_gyg_p:"Visites, musées et expériences réservés à l'avance — évitez la queue et bloquez votre créneau.", passeios_gyg_btn:"Voir toutes les excursions →",
+    passeios_city_t:"🚶 Visite guidée à pied", passeios_city_p:"Découvrez le Centre Historique, l'avenue Paulista et les principaux sites avec un guide local.", passeios_city_btn:"Voir les city tours →",
+    passeios_food_t:"🍝 Tour gastronomique", passeios_food_p:"Goûtez le meilleur de la gastronomie de São Paulo avec un guide spécialisé, y compris le Mercadão.", passeios_food_btn:"Voir les tours gastronomiques →",
+    passeios_masp_t:"🖼️ Billet MASP coupe-file", passeios_masp_p:"Réservez votre créneau au musée situé à quelques pas de l'appartement.", passeios_masp_btn:"Voir les billets MASP →",
+    passeios_car_t:"🚗 Location de voiture", passeios_car_badge:"5% OFF", passeios_car_p:"Comparez les meilleurs tarifs pour votre séjour. Utilisez le code <b>DOMFERIAS</b> pour 5% de réduction — valable uniquement en réservant via le bouton ci-dessous.", passeios_car_btn:"Comparer les tarifs avec 5% OFF →",
+    pdf_btn:"Enregistrer le guide en PDF",
+    notice_label:"📌 Avis importants", notice_default:"Aucun avis particulier pour le moment — profitez bien de votre séjour !",
+    checklist_t:"✅ Checklist avant de partir", cl_1:"Cafetière / cuisinière éteintes", cl_2:"Climatisation éteinte", cl_3:"Lumières éteintes", cl_4:"Poubelles sorties", cl_5:"Rien oublié dans une prise / chargeur", cl_6:"Porte verrouillée en partant",
+    consul_t:"🌎 Consulats à São Paulo", consul_us:"États-Unis", consul_fr:"France", consul_es:"Espagne", consul_cn:"Chine",
+    msg_checkin:"Je suis arrivé(e) à l'appartement, check-in fait ! 🏡", msg_checkout:"Je viens de quitter l'appartement, tout est en ordre ! 👋",
+    msg_help:"Bonjour Kamila ! Je suis un invité de l'appartement Penaforte Mendes et j'ai besoin d'aide.", msg_extrahour:"Bonjour Kamila ! Je voudrais vérifier la disponibilité pour une heure supplémentaire (50R$).",
+    pass_label:"Accès rapide", pass_addr:"Adresse", pass_wifipass:"Mot de passe Wi-Fi", pass_code:"Code de la porte de l'appartement", pass_hours:"Check-in / Check-out",
+    pass_note:"Besoin de quelque chose pendant votre séjour ? Kamila répond vite.", pass_btn:"Contacter Kamila sur WhatsApp",
+    checkin_sub:"À partir de 15h.",
+    checkin_1:"<b>Enregistrez votre visage avant d'arriver</b>L'accès à l'immeuble se fait par reconnaissance faciale. Kamila vous envoie un lien pour enregistrer votre photo avant le voyage — sans cela, le tourniquet ne s'ouvrira pas.",
+    checkin_2:"<b>Arrivez à l'adresse et entrez via la reconnaissance faciale</b>Rua Dr. Penaforte Mendes, 160. Votre visage enregistré débloque l'accès à l'accueil, sans clé ni badge.",
+    checkin_3:"<b>Montez au 6ème étage — Appartement 602D</b>L'appartement se trouve juste à la sortie de l'ascenseur.",
+    checkin_4:"<b>Tapez 3110 sur la porte de l'appartement</b>Ce code n'est que pour la serrure de votre appartement — l'entrée de l'immeuble a déjà été déverrouillée par la reconnaissance faciale.",
+    checkin_btn:"Je suis arrivé(e) ! Prévenir Kamila", qa_title:"Vous venez d'arriver ou vous partez ?", qa_checkin_short:"Arrivé(e) !", qa_checkin_sub:"Signaler l'arrivée", qa_checkout_short:"Parti(e) !", qa_checkout_sub:"Signaler le départ",
+    apt_sub:"42m², balcon, 6ème étage.",
+    apt_am1:"🛏️ Lit double 1,38×1,88m", apt_am2:"🛋️ Canapé dans le salon — se transforme en lit pour les réservations de 3 invités ou plus", apt_am3:"❄️ Climatisation", apt_am4:"📺 Smart TV", apt_am5:"🍳 Cuisine entièrement équipée", apt_am6:"🧺 Linge de lit et de bain",
+    apt_light_title:"🌤️ Lumière naturelle sur le canapé-lit", apt_light_p:"Cette information concerne la partie extérieure, où se trouve le canapé-lit du 3ème et 4ème invité. Même rideau fermé, le toit en verre laisse entrer une lumière vive à l'aube — c'est pourquoi nous fournissons un masque de sommeil si besoin.",
+    cond_sub:"Équipements complets, sans avoir à quitter l'immeuble.",
+    cond_am1:"<b>6ème étage</b>🏊 Piscine", cond_am2:"<b>6ème étage</b>🏋️ Salle de sport", cond_am3:"<b>6ème étage</b>🧖 Sauna", cond_am4:"<b>Rez-de-chaussée</b>🛒 Mini marché", cond_am5:"<b>Rez-de-chaussée</b>💻 Espace coworking", cond_am6:"<b>Rez-de-chaussée</b>🧺 Laverie (12R$ lavage + 12R$ séchage)", cond_am7:"<b>1er étage</b>🗑️ Local poubelles (ascenseur de service)", cond_am8:"<b>Accueil</b>👮 24h/24 · reconnaissance faciale + interphone",
+    cond_hours_t:"🕒 Horaires piscine et salle de sport", cond_hours_p:"Salle de sport : de 6h à minuit, tous les jours. Piscines : de 8h à 22h, tous les jours — sauf le premier jour ouvré de la semaine, où elles sont fermées pour le nettoyage et le traitement de l'eau.",
+    cond_pool_t:"🏊 Règles de la piscine", cond_pool_p:"Il est interdit de manger ou boire dans la zone de la piscine. Il est également interdit de circuler en maillot de bain en dehors de la zone de la piscine.",
+    reg_silence_t:"🤫 Règle du silence", reg_silence_p:"Pour préserver l'harmonie avec les voisins, l'immeuble exige le silence de 22h à 7h. En cas de non-respect et d'amende appliquée par l'immeuble, le montant équivalent sera facturé via Airbnb.",
+    reg_visit_t:"🚫 Visiteurs extérieurs", reg_visit_p:"Non autorisés, afin de garantir la sécurité et la vie privée de tous dans l'immeuble.",
+    reg_smoke_t:"🚬 Fumer", reg_smoke_p:"Autorisé uniquement dans l'espace extérieur (balcon) de l'appartement, porte vitrée fermée.",
+    reg_guest_t:"👥 3ème et 4ème invité", reg_guest_p:"Pour les réservations de 2 invités, nous préparons le lit double. Pour utiliser le canapé-lit (3ème et 4ème invité), il faut réserver pour 3 personnes — cela le débloque automatiquement sur la réservation.",
+    reg_hour_t:"⏱️ Heure supplémentaire", reg_hour_p:"Il est possible de prolonger le départ pour 50R$, selon disponibilité. Appuyez sur le bouton ci-dessous pour vérifier avec Kamila.", reg_hour_btn:"Demander une heure supplémentaire",
+    reg_clean_t:"✨ Pas de frais de ménage", reg_clean_p:"Nous faisons confiance aux invités pour prendre soin du logement. Si l'appartement est rendu en mauvais état, des frais supplémentaires de 250R$ peuvent s'appliquer.",
+    reg_kit_t:"🧴 Kits supplémentaires", reg_kit_p:"Serviettes et linge de lit supplémentaires disponibles pour 50R$ par personne, sur demande.",
+    reg_linen_t:"🧺 Prendre soin du linge", reg_linen_p:"Merci de faire attention au maquillage, à la crème solaire ou à tout produit tachant. En cas de tache irréversible ou de dommage, la valeur de remplacement est :",
+    reg_table_item:"Article", reg_table_price:"Remplacement", reg_item1:"Drap", reg_item2:"Serviette de bain", reg_item3:"Serviette de toilette",
+    checkout_sub:"Jusqu'à 11h.",
+    checkout_1:"<b>Sortez les poubelles</b>Apportez-les au local poubelles du 1er étage, via l'ascenseur de service.",
+    checkout_2:"<b>Pas de papier toilette dans les toilettes</b>Jetez-le toujours à la poubelle — en cas de bouchon, des frais de 300R$ seront facturés.",
+    checkout_3:"<b>Éteignez tout</b>Climatisation, lumières, et verrouillez la porte.",
+    checkout_4:"<b>C'est fait !</b>Merci de nous prévenir de votre départ en appuyant sur le bouton ci-dessous. Pour toute question, écrivez sur WhatsApp.",
+    checkout_btn:"Je suis parti(e) ! Prévenir Kamila",
+    regiao_sub:"Au cœur de Bela Vista, à 1km de l'Av. Paulista.", dm_title:"Carte de proximité", dm_caption:"Position et distance réelles par rapport à l'appartement — ce n'est juste pas le plan de rues Google.", dm_here:"Vous êtes ici", dm_cluster:"Frei Caneca et métro — à moins d'1km", regiao_open_map:"Ouvrir la localisation dans Maps", regiao_map_btn:"Voir la carte complète avec tous les points", regiao_hint:'Ou appuyez sur « Voir l\'itinéraire » sur chaque carte ci-dessous pour aller directement à un endroit précis.', qa_hint:"Un tap suffit pour prévenir Kamila, y compris sur WhatsApp.",
+    c_frei_t:"Centre commercial et Centre de Congrès Frei Caneca", c_frei_d:"en face", c_frei_p:"Idéal si vous êtes ici pour un congrès — il suffit de traverser la rue. Il y a aussi un cinéma, des restaurants et des boutiques.",
+    cat_hosp:"Hôpitaux à proximité", c_sirio_t:"Hôpital Sírio-Libanês", c_9dj_t:"Hôpital 9 de Julho", c_sc_t:"Hôpital Santa Catarina", c_oc_t:"Hôpital Alemão Oswaldo Cruz", c_sam_t:"Hôpital Samaritano (Higienópolis)",
+    c_pm_t:"Pro Matre Paulista", c_pm_p:"Si vous êtes ici pour des soins ou une convalescence, les pharmacies et le mini marché de l'immeuble sont tout proches, et l'appartement est calme pour se reposer.",
+    cat_sp:"Découvrir São Paulo",
+    c_masp_t:"MASP", c_masp_p:"L'un des musées les plus importants d'Amérique latine.",
+    c_tri_t:"Parc Trianon", c_tri_addr:"Av. Paulista, s/n — juste en face du MASP", c_tri_p:"Un petit bout de forêt atlantique au milieu de l'avenue, parfait pour une pause.",
+    c_ibi_t:"Parc Ibirapuera", c_ibi_p:"Le parc le plus connu de la ville, avec musées et pistes cyclables.",
+    c_beco_t:"Ruelle Batman", c_beco_p:"Une galerie d'art urbain à ciel ouvert, dans l'un des quartiers les plus bohèmes de SP.",
+    c_osc_t:"Rue Oscar Freire", c_osc_p:"La rue la plus chic de São Paulo — boutiques de luxe, cafés et jolies vitrines.",
+    c_lib_t:"Liberdade", c_lib_addr:"Quartier japonais — Liberdade", c_lib_p:"La plus grande communauté japonaise hors du Japon : street food, marché artisanal le week-end et boutiques asiatiques.",
+    c_se_t:"Sé & Centre Historique", c_se_addr:"Cathédrale de la Sé, Pátio do Colégio, Pinacoteca", c_se_p:"Le berceau de São Paulo — architecture historique et musées à ciel ouvert.",
+    c_merc_t:"Marché Municipal (Mercadão)",
+    route:"Voir l'itinéraire →",
+    metro_sub:"Les stations les plus proches, toutes à quelques minutes à pied.",
+    m_cons_t:"Consolação", m_cons_p:"Une autre option proche, sur la ligne Verte.",
+    m_hig_t:"Higienópolis-Mackenzie", m_hig_p:"La station la plus proche de l'appartement. Correspondance directe avec la ligne Verte à Paulista.",
+    m_tri_t:"Trianon-MASP", m_tri_p:"Descend directement sur l'Av. Paulista, en face du musée.",
+    m_bri_t:"Brigadeiro", line_verde:"Ligne Verte", line_amarela:"Ligne Jaune",
+    metro_closing:"Les couloirs de bus sur Consolação, 9 de Julho, 23 de Maio et Paulista permettent de rejoindre presque tous les quartiers. Uber et 99 fonctionnent bien dans tout São Paulo.",
+    tel_kamila:" · WhatsApp", tel_portaria_label:"Accueil de l'immeuble", tel_portaria:" · via l'interphone, poste de l'appartement",
+    tel_policia_label:"Police", tel_policia:" · urgence", tel_samu_label:"SAMU", tel_samu:" · urgence médicale", tel_bomb_label:"Pompiers", tel_bomb:" · urgence",
+    footer_script:"J'espère que votre séjour sera paisible", footer_p:"et que São Paulo vous accueillera aussi chaleureusement que j'ai essayé de le faire. Pour toute question, n'hésitez pas.", footer_btn:"Contacter Kamila sur WhatsApp",
+    review_ask_p:"🌟 Si vous avez apprécié votre séjour, un avis 5 étoiles sur Airbnb nous aide énormément ! Merci 💛", review_ask_btn:"Voir l'annonce sur Airbnb"
+  }
+};
+
+var currentLang = 'pt';
+function setLang(lang){
+  var dict = I18N[lang] || I18N.pt;
+  currentLang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key = el.getAttribute('data-i18n');
+    if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
+  });
+  var searchInput = document.getElementById('searchInput');
+  if(searchInput && dict.search_placeholder){ searchInput.placeholder = dict.search_placeholder; }
+  var gbInput = document.getElementById('guestbookText');
+  if(gbInput && dict.guestbook_placeholder){ gbInput.placeholder = dict.guestbook_placeholder; }
+  var tradInput = document.getElementById('tradText');
+  if(tradInput && dict.trad_placeholder){ tradInput.placeholder = dict.trad_placeholder; }
+  document.documentElement.lang = lang;
+  document.getElementById('langOverlay').style.display = 'none';
+  window.scrollTo(0,0);
+  buildSearchIndex();
+}
+document.addEventListener('DOMContentLoaded', buildSearchIndex);
+
+window.addEventListener('scroll', function(){
+  var bar = document.getElementById('readProgress');
+  if(bar){
+    var h = document.documentElement;
+    var scrollable = h.scrollHeight - h.clientHeight;
+    var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  var btn = document.querySelector('.back-to-toc');
+  var tocEl = document.getElementById('toc');
+  if(!btn || !tocEl) return;
+  var tocBottom = tocEl.getBoundingClientRect().bottom + window.scrollY;
+  if(window.scrollY > tocBottom){ btn.classList.add('show'); }
+  else{ btn.classList.remove('show'); }
+}, {passive:true});
+
+</script>
+
+</body>
+</html>
